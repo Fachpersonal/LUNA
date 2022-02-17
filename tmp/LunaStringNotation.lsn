@@ -1,0 +1,22 @@
+{
+    "int":1, 
+    "String":"Hello World!", 
+    "int[]":[1, 2, 3], 
+    "String[]":["Hello", "World"], 
+    "LSNObject[]":{
+        "int":1, 
+        "String":"Hello World!", 
+        "int[]":[1, 2, 3], 
+        "String[]":["Hello", "World"], 
+        "LSNObject2[]":{
+            "int":1, 
+            "String":"Hello World!", 
+            "int[]":[1, 2, 3], 
+            "String[]":["Hello", "World"], 
+            "key":3
+        }
+    }
+}
+
+<$name>$value</RES>
+<$name>$value</CONF>

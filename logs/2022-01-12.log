@@ -1,0 +1,102 @@
+
+<0:8:27>  [INFO] :: Logger successfully booted!
+<0:8:28>  [INFO] :: Core booted successfully!
+<0:21:40>  [INFO] :: Logger successfully booted!
+<0:21:40>  [INFO] :: Core booted successfully!
+<0:21:40>  [INFO] :: Starting Storage module!
+<0:21:40>  [INFO] :: Storage module successfully booted!
+<0:21:40>  [INFO] :: New StorageFile created! $fileName:{shirts.lstor}!
+<0:21:40>  [INFO] :: New StorageFile created! $fileName:{pants.lstor}!
+<0:21:41>  [INFO] :: New StorageFile created! $fileName:{shoes.lstor}!
+<0:21:41>  [Storage] New Shirt created!
+<0:21:41>  [Storage] New Shirt created!
+<0:21:41>  [Storage] New Shoes created!
+<0:21:41>  [Storage] New Shoes created!
+<0:21:41>  [Storage] New Pants created!
+<0:21:41>  [Storage] New Pants created!
+<0:34:31>  [INFO] :: Logger successfully booted!
+<0:34:31>  [INFO] :: Core booted successfully!
+<0:34:31>  [INFO] :: Starting Storage module!
+<0:34:31>  [INFO] :: Storage module successfully booted!
+<0:34:32>  [Storage] New Shirt created!
+<0:34:32>  [Storage] New Shirt created!
+<0:34:32>  [Storage] New Shoes created!
+<0:34:32>  [Storage] New Shoes created!
+<0:34:32>  [Storage] New Pants created!
+<0:34:33>  [Storage] New Pants created!
+<0:37:48>  [INFO] :: Logger successfully booted!
+<0:37:48>  [INFO] :: Core booted successfully!
+<0:37:48>  [INFO] :: Starting Storage module!
+<0:37:49>  [INFO] :: Storage module successfully booted!
+<0:37:49>  [Storage] New Shirt created!
+<0:37:49>  [Storage] New Shirt created!
+<0:37:49>  [Storage] New Shoes created!
+<0:37:49>  [Storage] New Shoes created!
+<0:37:49>  [Storage] New Pants created!
+<0:37:50>  [Storage] New Pants created!
+<0:39:46>  [INFO] :: Logger successfully booted!
+<0:39:47>  [INFO] :: Core booted successfully!
+<0:39:47>  [INFO] :: Starting Storage module!
+<0:39:47>  [INFO] :: Storage module successfully booted!
+<0:39:47>  [Storage] New Shirt created!
+<0:39:48>  [Storage] New Shirt created!
+<0:39:48>  [Storage] New Shirt created!
+<0:39:48>  [Storage] New Shirt created!
+<0:39:48>  [Storage] New Shirt created!
+<0:39:48>  [Storage] New Shirt created!
+<0:39:49>  [Storage] New Shirt created!
+<0:39:49>  [Storage] New Shirt created!
+<0:39:49>  [Storage] New Shirt created!
+<0:39:49>  [Storage] New Shirt created!
+<0:39:49>  [Storage] New Shirt created!
+<0:39:50>  [Storage] New Shirt created!
+<0:39:50>  [Storage] New Shirt created!
+<0:39:50>  [Storage] New Shirt created!
+<0:39:50>  [Storage] New Shirt created!
+<0:39:50>  [Storage] New Shirt created!
+<0:39:51>  [Storage] New Shirt created!
+<0:39:51>  [Storage] New Shirt created!
+<0:39:51>  [Storage] New Shirt created!
+<0:39:51>  [Storage] New Shirt created!
+<0:39:51>  [Storage] New Shirt created!
+<0:39:52>  [Storage] New Shirt created!
+<0:39:52>  [Storage] New Shirt created!
+<0:39:52>  [Storage] New Shirt created!
+<0:39:52>  [Storage] New Shirt created!
+<0:39:52>  [Storage] New Shirt created!
+<0:39:53>  [Storage] New Shirt created!
+<0:39:53>  [Storage] New Shirt created!
+<0:39:53>  [Storage] New Shirt created!
+<0:39:53>  [Storage] New Shirt created!
+<0:39:54>  [Storage] New Shirt created!
+<0:39:54>  [Storage] New Shirt created!
+<0:39:54>  [Storage] New Shirt created!
+<0:39:54>  [Storage] New Shirt created!
+<0:39:54>  [Storage] New Shirt created!
+<0:39:55>  [Storage] New Shirt created!
+<0:39:55>  [Storage] New Shirt created!
+<0:39:55>  [Storage] New Shirt created!
+<0:39:55>  [Storage] New Shirt created!
+<0:39:55>  [Storage] New Shirt created!
+<0:39:56>  [Storage] New Shirt created!
+<0:39:56>  [Storage] New Shirt created!
+<0:39:56>  [Storage] New Shirt created!
+<0:39:56>  [Storage] New Shirt created!
+<0:39:56>  [Storage] New Shirt created!
+<0:39:57>  [Storage] New Shirt created!
+<0:39:57>  [Storage] New Shirt created!
+<0:39:57>  [Storage] New Shirt created!
+<0:39:57>  [Storage] New Shirt created!
+<0:39:57>  [Storage] New Shirt created!
+<23:41:50>  [INFO] :: Logger successfully booted!
+<23:41:50>  [WARNING] :: Config module stopped!
+<23:50:13>  [INFO] :: Logger successfully booted!
+<23:50:13>  [WARNING] :: Config module stopped!
+<23:51:0>  [INFO] :: Logger successfully booted!
+<23:51:0>  [WARNING] :: Config module stopped!
+<23:51:20>  [INFO] :: Logger successfully booted!
+<23:51:20>  [WARNING] :: Config module stopped!
+<23:51:43>  [INFO] :: Logger successfully booted!
+<23:54:16>  [WARNING] :: Config module stopped!
+<23:55:15>  [INFO] :: Logger successfully booted!
+<23:55:30>  [INFO] :: Core booted successfully!
