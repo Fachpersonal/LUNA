@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import net.luna.util.errors.LSNException;
 
-//! Setup program it runs befor 
 public class ResourceHandler {
 
     // *R.module.Logger == returns instance of Logger
@@ -24,7 +23,7 @@ public class ResourceHandler {
 
     public static class R {
         public class module {
-            ArrayList<ModuleStructure> mods;
+            private ArrayList<ModuleStructure> mods;
 
             public ModuleStructure get(int index) {
                 return mods.get(index);
@@ -41,7 +40,7 @@ public class ResourceHandler {
         }
 
         public class string {
-            ArrayList<LSNObject> strings;
+            private ArrayList<LSNObject> strings;
 
             public LSNObject get(int index) {
                 return strings.get(index);
