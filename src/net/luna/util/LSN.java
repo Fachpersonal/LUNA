@@ -3,7 +3,6 @@ package net.luna.util;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,97 +19,57 @@ public class LSN {
         obj = new ArrayList<>();
     }
 
-    public static LSN readData(String path) throws LSNException {
+    public static LSN readData(String path) throws LSNException, IOException {
         return readData(new File(path));
     }
 
-    public static LSN readData(File f) throws LSNException {
+    public static LSN readData(File f) throws LSNException, IOException {
         LSN lsn = new LSN();
-        BufferedReader br;
-        try {
-            br = new BufferedReader(new FileReader(f));
-            int lineCount = 1;
-            String line;
-            while ((line = br.readLine()) != null) {
-                char[] cline = line.toCharArray();
-
-                String key = "";
-                String value = "";
-                LSNType type = null;
-
-                if (cline[0] != '<') {
-                    Logger.getLogger().ERROR(
-                            new LSNException("Syntax Error at " + f.getPath() + " (" + lineCount + ":" + 1 + ")"));
-                } else if (cline[cline.length - 1] != '>') {
-                    Logger.getLogger().ERROR(new LSNException(
-                            "Syntax Error at " + f.getPath() + " (" + lineCount + ":" + cline.length + ")"));
-                }
-
-                for (int i = 1; i < cline.length - 1; i++) {
-
-                    // ? Gets Key
-                    do {
-                        key += cline[i];
-                    } while (cline[i] != '>');
-                    // ? Gets Value
-                    while (true) {
-                        if (cline[i] != '<' && cline[i + 1] != '/') {
-                            value += cline[i];
-                        } else {
-                            i += 2;
-                            break;
-                        }
-
-                        if (i == cline.length) {
-                            br.close();
-                            throw new LSNException("Please use following format <$name>$value</$TYPE>");
-                        }
-                    }
-                    // ? Gets Type
-                    {
-                        String STR_Type = "";
-                        LSNType[] types = LSNType.values();
-                        do {
-                            STR_Type += cline[i];
-                        } while (cline[i] != '<');
-                        for (int j = 0; j < types.length; j++) {
-                            if (types[i].toString().equals(STR_Type)) {
-                                type = types[i];
-                            }
-                        }
+        BufferedReader br = new BufferedReader(new FileReader("strings.lsn"));
+        String line;
+        while ((line = br.readLine()) != null) {
+            char[] cline = line.toCharArray();
+            int pointer = 1;
+            String key = "";
+            String value = "";
+            LSNType type = null;
+            do { // *Gets Key
+                key += cline[pointer];
+                pointer++;
+            } while (cline[pointer] != '>');
+            pointer++;
+            do { // *Gets value
+                value += cline[pointer];
+                pointer++;
+            } while (cline[pointer] != '<' && cline[pointer + 1] != '/');
+            pointer += 2;
+            { // ? Gets Type
+                String STR_Type = "";
+                LSNType[] types = LSNType.values();
+                do {
+                    STR_Type += cline[pointer];
+                    pointer++;
+                } while (cline[pointer] != '>');
+                for (int j = 0; j < types.length; j++) {
+                    if (types[j].toString().equals(STR_Type)) {
+                        type = types[j];
                     }
                 }
-
-                LSNObject lsno = new LSNObject(key, value, type);
-                lsn.add(lsno);
-                lineCount++;
-
-                br.close();
             }
-            br.close();
-        } catch (FileNotFoundException e) {
-            Logger.getLogger().ERROR("Given file could not be found!", e);
-            e.printStackTrace();
-        } catch (IOException e) {
-            Logger.getLogger().ERROR("Could not read given file", e);
-            e.printStackTrace();
+            lsn.add(new LSNObject(key, value, type));
         }
+        br.close();
         return lsn;
     }
 
-    public void writeData(File f) {
+    public void writeData(File f) throws IOException {
         writeData(this, f);
     }
 
-    public static void writeData(LSN lsn, File f) {
-        try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(f));
-            bw.write(lsn.toString());
-            bw.close();
-        } catch (IOException e) {
-            Logger.getLogger().ERROR("Could not write into given file", e);
-            e.printStackTrace();
-        }
+    public static void writeData(LSN lsn, File f) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+        bw.write(lsn.toString());
+        bw.close();
     }
 
     public void add(LSNObject object) {
