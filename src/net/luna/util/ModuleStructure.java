@@ -1,9 +1,13 @@
 package net.luna.util;
 
-public interface ModuleStructure {
+public abstract class ModuleStructure {
 
-    public void start();
+    private String ID;
 
-    public void stop();
+    public abstract void start();
+
+    public abstract void stop();
+
+    public 
 
 }

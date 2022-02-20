@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import net.luna.util.ModuleStructure;
 
-public class Logger implements ModuleStructure {
+public class Logger extends ModuleStructure {
 
     private BufferedWriter bw;
 

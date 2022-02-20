@@ -1,19 +1,18 @@
 
-import net.luna.modules.Logger;
-import net.luna.util.ResourceHandler.R;
+import java.io.File;
+
+import net.luna.util.LSN;
 import net.luna.util.errors.LSNException;
 
 public class Temp {
 
         public static void main(String[] args) {
-                Logger.getLogger().ERROR(new LSNException("lul"));
-        }
-
-        public static interface R {
-
-        }
-
-        public class Mod implements R {
-
+                try {
+                        LSN lsn = LSN.readData(new File("./strings.lsn"));
+                        System.out.println(lsn.toString());
+                } catch (LSNException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                }
         }
 }

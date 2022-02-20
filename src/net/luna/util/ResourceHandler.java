@@ -12,26 +12,40 @@ public class ResourceHandler {
     // * R.string.welcome == returns welcome message string
     // ! R.string.keyName == return keyName message as String
 
-    public ResourceHandler() {
-        try {
-            LSN lsn = LSN.readData("strings.lsn");
-        } catch (LSNException e) {
-            // ! TODO: Log Error Message to BUFFER
-            e.printStackTrace();
+    public ResourceHandler() throws LSNException {
+        LSNObject[] lsn = LSN.readData("strings.lsn").getLSN();
+
+        for (int i = 0; i < lsn.length; i++) {
+            if (lsn[i].getType().equals(LSNType.CONF)) {
+            } else if (lsn[i].getType().equals(LSNType.RES)) {
+
+            } else {
+                throw new LSNException("Non Supported LSNType! @ ResourceHandler");
+            }
+
         }
     }
 
     public static class R {
         public class module {
-            private ArrayList<ModuleStructure> mods;
+            private static ArrayList<ModuleStructure> mods;
 
-            public ModuleStructure get(int index) {
+            public static ModuleStructure get(int index) {
                 return mods.get(index);
             }
 
-            public ModuleStructure get(String name) {
+            public static ModuleStructure get(String name) {
                 for (int i = 0; i < mods.size(); i++) {
                     if (mods.get(i).getClass().getSimpleName().toLowerCase().equals(name.toLowerCase())) {
+                        return mods.get(i);
+                    }
+                }
+                return null;
+            }
+
+            public static ModuleStructure getByID(String ID) {
+                for (int i = 0; i < mods.size(); i++) {
+                    if (mods.get(i)..equals(name.toLowerCase())) {
                         return mods.get(i);
                     }
                 }
@@ -40,13 +54,13 @@ public class ResourceHandler {
         }
 
         public class string {
-            private ArrayList<LSNObject> strings;
+            private static ArrayList<LSNObject> strings;
 
-            public LSNObject get(int index) {
+            public static LSNObject get(int index) {
                 return strings.get(index);
             }
 
-            public String get(String keyName) {
+            public static String get(String keyName) {
                 for (int i = 0; i < strings.size(); i++) {
                     if (strings.get(i).getKey().toLowerCase().equals(keyName.toLowerCase())) {
                         if (strings.get(i).getType().equals(LSNType.RES)) {
@@ -57,6 +71,15 @@ public class ResourceHandler {
                 return null;
             }
         }
-    }
 
+        public static Object getItemByName(String name) {
+            ModuleStructure m = module.get(name);
+            String s = string.get(name);
+            return (m != null) ? m : ((s == null) ? s : null);
+        }
+
+        public static Object getItemByID(String ID) {
+            ModuleStructure m = module.getByID(ID);
+        }
+    }
 }

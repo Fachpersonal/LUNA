@@ -7,5 +7,6 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "editor.formatOnSave": true
 }

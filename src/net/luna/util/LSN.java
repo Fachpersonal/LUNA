@@ -67,13 +67,17 @@ public class LSN {
                         }
                     }
                     // ? Gets Type
-                    if (i + 5 == cline.length) {
-                        type = LSNType.CONF;
-                    } else if (i + 4 == cline.length) {
-                        type = LSNType.RES;
-                    } else {
-                        br.close();
-                        throw new LSNException("Invalid type {RES, CONF}");
+                    {
+                        String STR_Type = "";
+                        LSNType[] types = LSNType.values();
+                        do {
+                            STR_Type += cline[i];
+                        } while (cline[i] != '<');
+                        for (int j = 0; j < types.length; j++) {
+                            if (types[i].toString().equals(STR_Type)) {
+                                type = types[i];
+                            }
+                        }
                     }
                 }
 
@@ -117,6 +121,14 @@ public class LSN {
         if (!obj.remove(object)) {
             Logger.getLogger().WARNING("Couldnt remove object!");
         }
+    }
+
+    public LSNObject get(int index) {
+        return obj.get(index);
+    }
+
+    public LSNObject[] getLSN() {
+        return (LSNObject[]) obj.toArray();
     }
 
     public String toString() {
