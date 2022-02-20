@@ -12,6 +12,18 @@ public class LSNObject {
         this.type = type;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public LSNType getType() {
+        return type;
+    }
+
     public String toString() {
         return "<" + key + ">" + value + "</" + type.toString() + ">";
     }

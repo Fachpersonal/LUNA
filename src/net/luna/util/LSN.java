@@ -20,6 +20,10 @@ public class LSN {
         obj = new ArrayList<>();
     }
 
+    public static LSN readData(String path) throws LSNException {
+        return readData(new File(path));
+    }
+
     public static LSN readData(File f) throws LSNException {
         LSN lsn = new LSN();
         BufferedReader br;
