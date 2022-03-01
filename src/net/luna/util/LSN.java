@@ -19,15 +19,14 @@ public class LSN {
         obj = new ArrayList<>();
     }
 
-    public static LSN readData(String path) throws LSNException, IOException {
-        return readData(new File(path));
-    }
+    public static LSN readSpecificData(File f, LSNType[] specificTypes) throws LSNException, IOException {
 
-    public static LSN readData(File f) throws LSNException, IOException {
         LSN lsn = new LSN();
         BufferedReader br = new BufferedReader(new FileReader("strings.lsn"));
         String line;
+        boolean contains = false;
         while ((line = br.readLine()) != null) {
+            contains = false;
             char[] cline = line.toCharArray();
             int pointer = 1;
             String key = "";
@@ -45,7 +44,7 @@ public class LSN {
             pointer += 2;
             { // ? Gets Type
                 String STR_Type = "";
-                LSNType[] types = LSNType.values();
+                LSNType[] types = (specificTypes == null ? LSNType.values() : specificTypes);
                 do {
                     STR_Type += cline[pointer];
                     pointer++;
@@ -53,13 +52,28 @@ public class LSN {
                 for (int j = 0; j < types.length; j++) {
                     if (types[j].toString().equals(STR_Type)) {
                         type = types[j];
+                        contains = true;
                     }
                 }
             }
-            lsn.add(new LSNObject(key, value, type));
+            if (contains) {
+                lsn.add(new LSNObject(key, value, type));
+            }
         }
         br.close();
         return lsn;
+    }
+
+    public static LSN readSpecificData(String path, LSNType[] specificTypes) throws LSNException, IOException {
+        return readSpecificData(new File(path), specificTypes);
+    }
+
+    public static LSN readData(String path) throws LSNException, IOException {
+        return readSpecificData(new File(path), null);
+    }
+
+    public static LSN readData(File f) throws LSNException, IOException {
+        return readSpecificData(f, null);
     }
 
     public void writeData(File f) throws IOException {
@@ -86,8 +100,8 @@ public class LSN {
         return obj.get(index);
     }
 
-    public LSNObject[] getLSN() {
-        return (LSNObject[]) obj.toArray();
+    public ArrayList<LSNObject> getLSN() {
+        return obj;
     }
 
     public String toString() {
