@@ -11,6 +11,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 import net.luna.util.ModuleStructure;
+import net.luna.util.ResourceHandler.R;
 
 public class Logger extends ModuleStructure {
 
@@ -50,7 +51,7 @@ public class Logger extends ModuleStructure {
                     bw.newLine();
                     bw.write("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
                             + LocalTime.now().getSecond() + ">  [INFO] :: " + buf.get(i) + "!");
-                    if (Core.loggerOutput) {
+                    if (R.core.loggerOutput) {
                         System.out.println("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
                                 + LocalTime.now().getSecond() + ">  [INFO] :: " + buf.get(i) + "!");
                     }
