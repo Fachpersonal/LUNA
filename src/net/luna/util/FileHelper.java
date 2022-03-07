@@ -15,14 +15,14 @@ import java.util.ArrayList;
  * @version 2
  */
 public class FileHelper {
-    private String filePath;
+    private File file;
     private ArrayList<String> content;
     private int fileLength;
     private long hashSum;
 
     /** Basic-Constructor */
     public FileHelper() {
-        filePath = null;
+        file = null;
         content = new ArrayList<String>();
         fileLength = 0;
         hashSum = 0;
@@ -35,7 +35,8 @@ public class FileHelper {
      * @throws IOException when File does not exists or cannot be read
      */
     public void readFile(String filePath) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(new File(filePath)));
+        file = new File(filePath);
+        BufferedReader br = new BufferedReader(new FileReader(file));
         resetArgs();
 
         int l = 0;
@@ -46,7 +47,6 @@ public class FileHelper {
             l++;
         }
 
-        this.filePath = filePath;
         fileLength = l;
         hashSum = calHashSum(content);
 
@@ -100,18 +100,21 @@ public class FileHelper {
      */
     public void writeSafedFile(String filePath, ArrayList<String> content, boolean append) throws IOException {
         writeFile(filePath, content, append);
+        file = new File(filePath);
         resetArgs();
-        this.filePath = filePath;
         this.content = content;
         fileLength = 0;
         hashSum = calHashSum(content);
+    }
+
+    public void unloadSafedFile() {
+        resetArgs();
     }
 
     /**
      * Sets filePath, content, fileLength and hashSum to its default values
      */
     private void resetArgs() {
-        this.filePath = null;
         content.clear();
         fileLength = 0;
         hashSum = 0;
@@ -131,12 +134,12 @@ public class FileHelper {
     }
 
     /**
-     * get filePath
+     * get file
      * 
-     * @return String
+     * @return File
      */
-    public String gFilePath() {
-        return filePath;
+    public File gFile() {
+        return file;
     }
 
     /**

@@ -42,8 +42,12 @@ public class Logger extends ModuleStructure {
      * @param msg
      * @throws IOException
      */
-    public void LOG(String msg) throws IOException {
-        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  " + msg, true);
+    public void LOG(String msg) {
+        try {
+            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  " + msg, true);
+        } catch (Exception e) {
+            ERROR(e);
+        }
     }
 
     /**
@@ -51,8 +55,12 @@ public class Logger extends ModuleStructure {
      * 
      * @param msg
      */
-    public void INFO(String msg) throws IOException {
-        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [INFO] :: " + msg + "!", true);
+    public void INFO(String msg) {
+        try {
+            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [INFO] :: " + msg + "!", true);
+        } catch (Exception e) {
+            ERROR(e);
+        }
     }
 
     /**
@@ -61,8 +69,12 @@ public class Logger extends ModuleStructure {
      * @param msg
      * @throws IOException
      */
-    public void WARNING(String msg) throws IOException {
-        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [WARNING] :: " + msg + "!", true);
+    public void WARNING(String msg) {
+        try {
+            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [WARNING] :: " + msg + "!", true);
+        } catch (Exception e) {
+            ERROR(e);
+        }
     }
 
     /**
@@ -71,8 +83,12 @@ public class Logger extends ModuleStructure {
      * @param msg
      * @throws IOException
      */
-    public void ERROR(String msg) throws IOException {
-        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + msg + "!", true);
+    public void ERROR(String msg) {
+        try {
+            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + msg + "!", true);
+        } catch (Exception e) {
+            ERROR(e);
+        }
     }
 
     /**
@@ -81,10 +97,14 @@ public class Logger extends ModuleStructure {
      * @param e
      * @throws IOException
      */
-    public void ERROR(Exception e) throws IOException {
-        StringWriter sw = new StringWriter();
-        e.printStackTrace(new PrintWriter(sw));
-        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + sw.toString(), true);
+    public void ERROR(Exception e) {
+        try {
+            StringWriter sw = new StringWriter();
+            e.printStackTrace(new PrintWriter(sw));
+            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + sw.toString(), true);
+        } catch (Exception e1) {
+            e1.printStackTrace();
+        }
     }
 
     private String getTime() {

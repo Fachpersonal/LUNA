@@ -1,6 +1,6 @@
 package net.luna;
 
-import net.luna.util.R;
+import net.luna.modules.Core;
 
 /**
  * App Start Class
@@ -10,10 +10,7 @@ import net.luna.util.R;
  */
 public class App {
 
-    public static String[] arguments;
-
     public static void main(String[] args) {
-        arguments = args;
-        System.out.println("Welcome to " + R.config.get("callName"));
+        new Core();
     }
 }
