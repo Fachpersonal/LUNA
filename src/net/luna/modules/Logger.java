@@ -1,126 +1,94 @@
 package net.luna.modules;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 
 import net.luna.util.ModuleStructure;
-import net.luna.util.ResourceHandler.R;
+import net.luna.util.R;
 
+/**
+ * Logger
+ * 
+ * @author @falscherIdiot
+ * @version 3
+ * @see ModuleStructure
+ */
 public class Logger extends ModuleStructure {
 
-    private BufferedWriter bw;
-
-    public static ArrayList<String> buf;
-
-    private static Logger logger;
-
-    public static Logger getLogger() {
-        if (logger == null) {
-            logger = new Logger();
-        }
-        return logger;
-    }
-
-    private Logger() {
-        buf = new ArrayList<String>();
+    /** Constructor */
+    public Logger() {
         start();
     }
 
+    /**
+     * Start function of Logger
+     */
     @Override
     public void start() {
-        INFO(Config.getConfig().getModuleStartMessage("Logger"));
-        try {
-            File save_File = new File(Config.getConfig().getLogDir() + LocalDate.now() + ".log");
-
-            bw = new BufferedWriter(new FileWriter(save_File, true));
-            bw.newLine();
-            bw.write("####################################################################################");
-            bw.newLine();
-            bw.write("#                                    SYSTEM START                                  #");
-            bw.newLine();
-            bw.write("####################################################################################");
-            if (buf != null && buf.size() >= 1) {
-                for (int i = 0; i < buf.size(); i++) {
-                    bw.newLine();
-                    bw.write("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                            + LocalTime.now().getSecond() + ">  [INFO] :: " + buf.get(i) + "!");
-                    if (R.core.loggerOutput) {
-                        System.out.println("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                                + LocalTime.now().getSecond() + ">  [INFO] :: " + buf.get(i) + "!");
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        INFO(Config.getConfig().getModuleStartSuccessMessage("Logger"));
+        R.logger = this;
     }
 
+    /** Stop function of Logger */
     @Override
     public void stop() {
-        WARNING(Config.getConfig().getModuleStopMessage("Logger"));
-        buf = null;
-        logger = null;
+        R.logger = null;
     }
 
-    private void write2File(String msg) {
-        try {
-            File save_File = new File(Config.getConfig().getLogDir() + LocalDate.now() + ".log");
-
-            bw = new BufferedWriter(new FileWriter(save_File, true));
-
-            bw.newLine();
-            bw.write(msg);
-            bw.close();
-            if (Core.loggerOutput) {
-                System.out.println(msg);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    /**
+     * Default LOG
+     * 
+     * @param msg
+     * @throws IOException
+     */
+    public void LOG(String msg) throws IOException {
+        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  " + msg, true);
     }
 
-    public void LOG(String msg) {
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  " + msg);
+    /**
+     * INFO LOG
+     * 
+     * @param msg
+     */
+    public void INFO(String msg) throws IOException {
+        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [INFO] :: " + msg + "!", true);
     }
 
-    public void INFO(String msg) {
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  [INFO] :: " + msg + "!");
+    /**
+     * WARNING LOG
+     * 
+     * @param msg
+     * @throws IOException
+     */
+    public void WARNING(String msg) throws IOException {
+        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [WARNING] :: " + msg + "!", true);
     }
 
-    public void WARNING(String msg) {
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  [WARNING] :: " + msg + "!");
+    /**
+     * ERROR DEFAULT LOG
+     * 
+     * @param msg
+     * @throws IOException
+     */
+    public void ERROR(String msg) throws IOException {
+        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + msg + "!", true);
     }
 
-    public void ERROR(String msg) {
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  [ERROR] :: " + msg + "!");
-    }
-
-    public void ERROR(String msg, Exception e) {
-        StringWriter sw = new StringWriter();
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  [ERROR] :: " + msg + "!");
-        e.printStackTrace(new PrintWriter(sw));
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  [ERROR] :: " + sw.toString());
-    }
-
-    public void ERROR(Exception e) {
+    /**
+     * ERROR EXCEPTION LOG
+     * 
+     * @param e
+     * @throws IOException
+     */
+    public void ERROR(Exception e) throws IOException {
         StringWriter sw = new StringWriter();
         e.printStackTrace(new PrintWriter(sw));
-        write2File("<" + LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":"
-                + LocalTime.now().getSecond() + ">  [ERROR] :: " + sw.toString());
+        R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + sw.toString(), true);
+    }
+
+    private String getTime() {
+        return (LocalTime.now().getHour() + ":" + LocalTime.now().getMinute() + ":" + LocalTime.now().getSecond());
     }
 
 }
