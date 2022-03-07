@@ -4,7 +4,7 @@ package net.luna.util;
  * @author @falscherIdiot
  * @version 1
  */
-public abstract class ModuleStructure {
+public interface ModuleStructure {
 
     /**
      * Module Start Method

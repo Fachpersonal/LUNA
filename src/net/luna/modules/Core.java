@@ -6,14 +6,23 @@ import net.luna.util.FileHelper;
 import net.luna.util.ModuleStructure;
 import net.luna.util.R;
 
-public class Core extends ModuleStructure {
+/**
+ * @author @falscherIdiot
+ * @version 2
+ * @see ModuleStructure
+ */
+public class Core implements ModuleStructure {
 
+    /** Constructor */
     public Core() {
         start();
         System.out.println("Welcome to " + R.config.get("callName"));
         stop();
     }
 
+    /**
+     * Start Method
+     */
     @Override
     public void start() {
         R.core = this;
@@ -32,6 +41,9 @@ public class Core extends ModuleStructure {
         R.logger.INFO("Core " + R.config.get("moduleStart"));
     }
 
+    /**
+     * Stop Method
+     */
     @Override
     public void stop() {
         R.logger.stop();

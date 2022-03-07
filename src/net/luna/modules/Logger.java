@@ -15,7 +15,7 @@ import net.luna.util.R;
  * @version 3
  * @see ModuleStructure
  */
-public class Logger extends ModuleStructure {
+public class Logger implements ModuleStructure {
 
     /** Constructor */
     public Logger() {
