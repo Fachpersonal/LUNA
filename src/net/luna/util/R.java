@@ -4,22 +4,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import net.luna.modules.ClientHandler;
 import net.luna.modules.Core;
 import net.luna.modules.Logger;
-import net.luna.modules.Server;
 
 /**
  * @author @falscherIdiot
  * @version 3
  */
 public class R {
-    public static Server server = null;
     public static Core core = null;
     public static FileHelper fileHelper = null;
     public static Logger logger = null;
     public static HashMap<String, String> config;
-    public static ArrayList<ClientHandler> clients;
 
     /**
      * 
