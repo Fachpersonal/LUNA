@@ -18,14 +18,12 @@ public class FileHelper {
     private File file;
     private ArrayList<String> content;
     private int fileLength;
-    private long hashSum;
 
     /** Basic-Constructor */
     public FileHelper() {
         file = null;
         content = new ArrayList<String>();
         fileLength = 0;
-        hashSum = 0;
     }
 
     /**
@@ -37,8 +35,7 @@ public class FileHelper {
     public void readFile(String filePath) throws IOException {
         file = new File(filePath);
         BufferedReader br = new BufferedReader(new FileReader(file));
-        resetArgs();
-
+        content.clear();
         int l = 0;
         String tmp;
 
@@ -48,7 +45,6 @@ public class FileHelper {
         }
 
         fileLength = l;
-        hashSum = calHashSum(content);
 
         br.close();
     }
@@ -101,36 +97,17 @@ public class FileHelper {
     public void writeSafedFile(String filePath, ArrayList<String> content, boolean append) throws IOException {
         writeFile(filePath, content, append);
         file = new File(filePath);
-        resetArgs();
         this.content = content;
         fileLength = 0;
-        hashSum = calHashSum(content);
-    }
-
-    public void unloadSafedFile() {
-        resetArgs();
     }
 
     /**
-     * Sets filePath, content, fileLength and hashSum to its default values
+     * Sets file, content, fileLength to its default values
      */
-    private void resetArgs() {
+    public void unloadSafedFile() {
+        file = null;
         content.clear();
         fileLength = 0;
-        hashSum = 0;
-    }
-
-    /**
-     * Calculates given Lists conentent into HashSum
-     * 
-     * @return hashSum of given content
-     */
-    private long calHashSum(ArrayList<String> content) {
-        String tmp = "";
-        for (String line : content) {
-            tmp += line + "\n";
-        }
-        return tmp.hashCode();
     }
 
     /**
@@ -160,12 +137,4 @@ public class FileHelper {
         return fileLength;
     }
 
-    /**
-     * get hashSum
-     * 
-     * @return long
-     */
-    public long gHashSum() {
-        return hashSum;
-    }
 }

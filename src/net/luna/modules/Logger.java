@@ -3,6 +3,7 @@ package net.luna.modules;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
 import net.luna.util.ModuleStructure;
@@ -44,7 +45,8 @@ public class Logger implements ModuleStructure {
      */
     public void LOG(String msg) {
         try {
-            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  " + msg, true);
+            System.out.println("<" + getTime() + ">  " + msg);
+            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log", "<" + getTime() + ">  " + msg, true);
         } catch (Exception e) {
             ERROR(e);
         }
@@ -57,7 +59,9 @@ public class Logger implements ModuleStructure {
      */
     public void INFO(String msg) {
         try {
-            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [INFO] :: " + msg + "!", true);
+            System.out.println("<" + getTime() + ">  [INFO] :: " + msg + "!");
+            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+                    "<" + getTime() + ">  [INFO] :: " + msg + "!", true);
         } catch (Exception e) {
             ERROR(e);
         }
@@ -71,7 +75,9 @@ public class Logger implements ModuleStructure {
      */
     public void WARNING(String msg) {
         try {
-            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [WARNING] :: " + msg + "!", true);
+            System.out.println("<" + getTime() + ">  [WARNING] :: " + msg + "!");
+            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+                    "<" + getTime() + ">  [WARNING] :: " + msg + "!", true);
         } catch (Exception e) {
             ERROR(e);
         }
@@ -85,7 +91,9 @@ public class Logger implements ModuleStructure {
      */
     public void ERROR(String msg) {
         try {
-            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + msg + "!", true);
+            System.out.println("<" + getTime() + ">  [ERROR] :: " + msg + "!");
+            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+                    "<" + getTime() + ">  [ERROR] :: " + msg + "!", true);
         } catch (Exception e) {
             ERROR(e);
         }
@@ -101,10 +109,16 @@ public class Logger implements ModuleStructure {
         try {
             StringWriter sw = new StringWriter();
             e.printStackTrace(new PrintWriter(sw));
-            R.fileHelper.writeFile(R.config.get("logDir"), "<" + getTime() + ">  [ERROR] :: " + sw.toString(), true);
+            System.out.println("<" + getTime() + ">  [ERROR] :: " + sw.toString() + "!");
+            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+                    "<" + getTime() + ">  [ERROR] :: " + sw.toString(), true);
         } catch (Exception e1) {
             e1.printStackTrace();
         }
+    }
+
+    private String getDate() {
+        return (LocalDate.now().getDayOfMonth() + "-" + LocalDate.now().getMonth() + "-" + LocalDate.now().getYear());
     }
 
     private String getTime() {
