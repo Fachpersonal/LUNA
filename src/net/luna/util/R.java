@@ -16,6 +16,7 @@ import net.luna.modules.LunaIO;
 /**
  * @author @falscherIdiot
  * @version 3
+ * @since 08-03-2022
  */
 public class R {
     public static LunaIO io = null;
@@ -128,6 +129,11 @@ public class R {
         return false;
     }
 
+    /**
+     * loads Users from Files
+     * 
+     * @throws IOException
+     */
     public static void loadUser() throws IOException {
         File[] userFiles = new File("./res/userData/").listFiles();
         for (File file : userFiles) {

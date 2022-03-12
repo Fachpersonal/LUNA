@@ -2,6 +2,14 @@ package net.luna.util.errors;
 
 import net.luna.util.R;
 
+/**
+ * LunaMessageProtocolFault
+ * 
+ * @author @falscherIdiot
+ * @since 10-03-2022
+ * @version 1
+ * @see Exception
+ */
 public class LMPFault extends Exception {
 
     private final int ID;

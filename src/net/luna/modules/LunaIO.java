@@ -26,8 +26,7 @@ public class LunaIO implements ModuleStructure {
 
     @Override
     public void start() {
-        // TODO Auto-generated method stub
-        R.logger.INFO(R.language.get("lunaIOstart"));
+        R.logger.INFO(R.language.get("moduleStart"));
         Scanner in = new Scanner(System.in);
         String cmd;
         login(in);
@@ -42,9 +41,8 @@ public class LunaIO implements ModuleStructure {
                     System.out.println("ECHO :::  " + lmp.gMSG());
                 }
             } catch (LMPFault e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                e.getFault();
+                R.logger.ERROR(e);
+                R.logger.ERROR(e.getFault());
             }
         }
         in.close();
@@ -52,8 +50,7 @@ public class LunaIO implements ModuleStructure {
 
     @Override
     public void stop() {
-        // TODO Auto-generated method stub
-
+        R.logger.WARNING(R.language.get("moduleStop"));
     }
 
     /**
@@ -77,8 +74,7 @@ public class LunaIO implements ModuleStructure {
                         return true;
                     }
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    R.logger.ERROR(e);
                 }
                 tries++;
             } else {

@@ -2,6 +2,13 @@ package net.luna.util;
 
 import net.luna.util.errors.LMPFault;
 
+/**
+ * LunaMessageingProtocol
+ * 
+ * @author @falscherIdiot
+ * @version 1
+ * @since 11-03-2022
+ */
 public class LMProtocol {
 
     public static String CMD_PREFIX;

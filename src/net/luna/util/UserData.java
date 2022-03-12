@@ -19,6 +19,14 @@ public class UserData {
     private int age;
     private boolean loggedin = false;
 
+    /**
+     * login
+     * 
+     * @param username
+     * @param password
+     * @return UserData
+     * @throws IOException
+     */
     public static UserData login(String username, String password) throws IOException {
         File[] userFiles = new File("./res/userData/").listFiles();
         for (File file : userFiles) {
