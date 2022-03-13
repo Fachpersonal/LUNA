@@ -52,7 +52,7 @@ public class Core implements ModuleStructure {
                     R.loadConfig(true);
                     R.logger.WARNING(R.language.get("configLoadError"));
                 }
-                R.logger.INFO(R.language.get("languageLoadError"));
+                R.logger.WARNING(R.language.get("languageLoadError"));
             }
             R.loadUser();
             if (!R.user.containsKey("admin")) {
@@ -74,6 +74,7 @@ public class Core implements ModuleStructure {
         R.logger.WARNING("Core " + R.language.get("moduleStop"));
         R.logger.stop();
         R.config.clear();
+        System.exit(1);
     }
 
 }

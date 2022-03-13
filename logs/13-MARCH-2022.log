@@ -1,0 +1,41 @@
+
+<0:23:10>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:23:10>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:23:10>  [INFO] :: LunaIO module started!
+<0:24:35>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:24:35>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:24:35>  [INFO] :: LunaIO module started!
+<0:26:5>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:26:5>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:26:5>  [INFO] :: LunaIO module started!
+<0:26:44>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:26:44>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:26:44>  [INFO] :: LunaIO module started!
+<0:26:58>  [ERROR] :: java.lang.NumberFormatException: For input string: " cd /run/media/falscheridiot/FI-M/LUNA ; /usr/bin/env /usr/lib64/jvm/java-17-openjdk/bin/java --enable-preview -XX:+ShowCodeDetailsInExceptionMessages -cp /run/media/falscheridiot/FI-M/LUNA/bin net.luna.App "
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:654)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at net.luna.util.UserData.login(UserData.java:28)
+	at net.luna.modules.LunaIO.start(LunaIO.java:33)
+	at net.luna.modules.LunaIO.<init>(LunaIO.java:24)
+	at net.luna.modules.Core.start(Core.java:65)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+<0:27:5>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:27:5>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:27:5>  [INFO] :: LunaIO module started!
+<0:29:13>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:29:13>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:29:13>  [INFO] :: LunaIO module started!
+<0:31:23>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:31:23>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:31:23>  [INFO] :: LunaIO module started!
+<0:42:31>  [WARNING] :: System config could not be loaded! loading default config!!
+<0:42:31>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<0:42:31>  [INFO] :: LunaIO module started!
+<0:42:42>  <admin> ECHO :::  test
+<0:42:50>  <admin> ECHO :::  louisa can u read this?
+<0:43:20>  [WARNING] :: <admin> System shutting down!
+<0:43:20>  [WARNING] :: LunaIO module stopped!
+<0:43:20>  [WARNING] :: Core module stopped!

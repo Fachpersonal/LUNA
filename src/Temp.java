@@ -1,9 +1,13 @@
 import java.io.IOException;
 
-import net.luna.modules.Core;
-
 public class Temp {
     public static void main(String[] args) throws IOException {
-        new Core();
+        char[] pssw = null;
+        pssw = System.console().readPassword("password :: ");
+        String ps = "";
+        for (char c : pssw) {
+            ps += c;
+        }
+        System.out.println(ps);
     }
 }

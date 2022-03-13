@@ -1,6 +1,5 @@
 package net.luna.util;
 
-import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,43 +18,99 @@ public class UserData {
     private int age;
     private boolean loggedin = false;
 
-    /**
-     * login
-     * 
-     * @param username
-     * @param password
-     * @return UserData
-     * @throws IOException
-     */
-    public static UserData login(String username, String password) throws IOException {
-        File[] userFiles = new File("./res/userData/").listFiles();
-        for (File file : userFiles) {
-            if (!file.getPath().contains(".lud")) {
-                continue;
+    public static UserData login() throws IOException {
+        System.out.println("-:: Login ::-");
+
+        System.out.println("[1] - Login");
+        System.out.println("[2] - Register");
+        try {
+            if (Integer.parseInt(System.console().readLine()) == 2) {
+                return register();
             }
-            if (!R.encryptString(username).equals(file.getPath().split(".")[0])) {
-                continue;
-            }
-            R.fileHelper.readFile(
-                    "./res/userData/" + R.encryptString(username) + ".lud");
-            ArrayList<String> content = R.fileHelper.gContent();
-            R.fileHelper.unloadSafedFile();
-            int size = content.size();
-            String un = null, pw = null, firstName = null, surName = null;
-            LocalDate birthday = null;
-            int age = 0;
-            un = content.get(0);
-            pw = content.get(1);
-            if (!R.encryptString(password).equals(pw)) {
-                continue;
-            }
-            firstName = size >= 3 ? content.get(2) : null;
-            surName = size >= 4 ? content.get(3) : null;
-            birthday = size >= 5 ? LocalDate.parse(content.get(4)) : null;
-            age = size >= 6 ? Integer.parseInt(content.get(5)) : null;
-            return new UserData(un, pw, firstName, surName, birthday, age, false);
+        } catch (java.lang.NumberFormatException e) {
+            R.logger.ERROR(e);
         }
-        return null;
+        int tries = 0;
+        while (true) {
+            if (tries >= 3) {
+                System.out.println(R.language.get("loginRegister"));
+            }
+            if (tries == 5) {
+                R.logger.WARNING(R.language.get("loginTries"));
+                tries = 0;
+            }
+            System.out.print("Enter username:: ");
+            String username = System.console().readLine();
+            if (username.length() < 4) {
+                System.out.println(R.language.get("loginUsernameErrorLength"));
+                continue;
+            }
+            if (username.equalsIgnoreCase("register")) {
+                return register();
+            }
+            String password = null;
+            {
+                String tmp = "";
+                {
+                    for (char c : System.console().readPassword("Enter password:: ")) {
+                        tmp += c;
+                    }
+                    if (tmp.length() < 4) {
+                        System.out.println(R.language.get("loginPasswordErrorLength"));
+                        continue;
+                    }
+                }
+                password = R.encryptString(tmp);
+            }
+            if (!R.user.containsKey(username)) {
+                System.out.println(R.language.get("loginError"));
+                tries++;
+                continue;
+            }
+            UserData x = R.user.get(username);
+            if (!x.gPassword().equals(password)) {
+                System.out.println(R.language.get("loginError"));
+                tries++;
+                continue;
+            }
+            return x;
+        }
+
+    }
+
+    public static UserData register() throws IOException {
+        System.out.println("-:: Register ::-");
+        String username = null, password = "", firstName = null, surName = null;
+        LocalDate ld = null;
+        int age = -1;
+        System.out.print("username :: ");
+        username = System.console().readLine();
+        {
+            for (char c : System.console().readPassword("password :: ")) {
+                password += c;
+            }
+        }
+        System.out.print("firstName :: ");
+        firstName = System.console().readLine();
+        System.out.print("surName :: ");
+        surName = System.console().readLine();
+        System.out.print("birthday :: ");
+        try {
+            ld = LocalDate.parse(System.console().readLine());
+        } catch (java.time.format.DateTimeParseException e) {
+            ld = null;
+            R.logger.ERROR(e);
+        }
+
+        System.out.print("age :: ");
+        try {
+            age = Integer.parseInt(System.console().readLine());
+        } catch (java.lang.NumberFormatException e) {
+            age = -1;
+            R.logger.ERROR(e);
+        }
+        R.logger.INFO(R.language.get("userRegistered") + "[" + username + "]");
+        return new UserData(username, password, firstName, surName, ld, age, true);
     }
 
     /**

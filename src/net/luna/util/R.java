@@ -40,7 +40,7 @@ public class R {
             if (!new File("./res/system.conf").exists()) {
                 return false;
             }
-            fileHelper.readFile("./res/system.conf");
+            fileHelper.readFile(new File("./res/system.conf"));
             if (fileHelper.gFileLength() > 0) {
                 ArrayList<String> tmp = fileHelper.gContent();
                 for (String line : tmp) {
@@ -89,7 +89,7 @@ public class R {
             if (!new File("./res/system.lang").exists()) {
                 return false;
             }
-            fileHelper.readFile("./res/system.lang");
+            fileHelper.readFile(new File("./res/system.lang"));
             if (fileHelper.gFileLength() > 0) {
                 ArrayList<String> tmp = fileHelper.gContent();
                 for (String line : tmp) {
@@ -124,6 +124,17 @@ public class R {
             language.put("languageLoaded", "System language succesfully loaded");
             language.put("languageLoadError", "System language could not be loaded! loading default language(EN_US)!");
             language.put("LMPFault1", "CMD-Prefix at wrong spot");
+            language.put("systemStart", "System starting");
+            language.put("systemShutdown", "System shutting down");
+            language.put("missingCommand", "Command does not exist");
+            language.put("userRegistered", "New user registered! ");
+            language.put("loggedIn", "Successfully logged in as ");
+            language.put("userNotExisting", "User does not exists!");
+            language.put("loginError", "Username or password is wrong!\nTry again!");
+            language.put("loginRegister", "Type \'register\' as username to register a new User");
+            language.put("loginTries", "Somebody tried to login more than five times!");
+            language.put("loginUserErrorLength", "Username needs to be at least 4 characters long!");
+            language.put("loginPasswordErrorLenght", "Passwor needs to be at least 4 characters long!");
             return true;
         }
         return false;
@@ -140,7 +151,7 @@ public class R {
             if (!file.getPath().contains(".lud")) {
                 continue;
             }
-            R.fileHelper.readFile(file.getPath());
+            R.fileHelper.readFile(file);
             ArrayList<String> content = R.fileHelper.gContent();
             int size = content.size();
             String un = null, pw = null, firstName = null, surName = null;
@@ -150,8 +161,18 @@ public class R {
             pw = content.get(1);
             firstName = size >= 3 ? content.get(2) : null;
             surName = size >= 4 ? content.get(3) : null;
-            birthday = size >= 5 ? LocalDate.parse(content.get(4)) : null;
-            age = size >= 6 ? Integer.parseInt(content.get(5)) : null;
+            try {
+                birthday = size >= 5 ? LocalDate.parse(content.get(4)) : null;
+            } catch (java.time.format.DateTimeParseException e) {
+                birthday = null;
+                R.logger.ERROR(e);
+            }
+            try {
+                age = size >= 6 ? Integer.parseInt(content.get(5)) : null;
+            } catch (java.lang.NumberFormatException e) {
+                age = -1;
+                R.logger.ERROR(e);
+            }
             user.put(un, new UserData(un, pw, firstName, surName, birthday, age, false));
             R.fileHelper.unloadSafedFile();
         }
@@ -174,8 +195,7 @@ public class R {
             }
             return uString;
         } catch (NoSuchAlgorithmException e) {
-            // TODO: handle exception
-            e.printStackTrace();
+            R.logger.ERROR(e);
         }
         return null;
     }

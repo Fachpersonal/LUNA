@@ -29,11 +29,11 @@ public class FileHelper {
     /**
      * Reads File
      * 
-     * @param filePath
+     * @param userFile
      * @throws IOException when File does not exists or cannot be read
      */
-    public void readFile(String filePath) throws IOException {
-        file = new File(filePath);
+    public void readFile(File userFile) throws IOException {
+        file = userFile;
         BufferedReader br = new BufferedReader(new FileReader(file));
         content.clear();
         int l = 0;

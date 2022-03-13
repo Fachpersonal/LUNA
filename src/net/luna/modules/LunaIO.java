@@ -1,7 +1,6 @@
 package net.luna.modules;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 import net.luna.util.LMProtocol;
 import net.luna.util.ModuleStructure;
@@ -19,6 +18,8 @@ import net.luna.util.errors.LMPFault;
  */
 public class LunaIO implements ModuleStructure {
 
+    private UserData user;
+
     public LunaIO() {
         start();
         stop();
@@ -26,61 +27,38 @@ public class LunaIO implements ModuleStructure {
 
     @Override
     public void start() {
-        R.logger.INFO(R.language.get("moduleStart"));
-        Scanner in = new Scanner(System.in);
+        R.logger.INFO("LunaIO " + R.language.get("moduleStart"));
         String cmd;
-        login(in);
-        while ((cmd = in.nextLine()) != null) {
-            try {
-                LMProtocol lmp = new LMProtocol(cmd);
-                if (lmp.gType().equals(LMProtocol.Type.SHUTDOWN)) {
-                    System.out.println("SHUTTING SYSTEM DOWN (NOT WORKING LMAO XD)    " + lmp.gMSG());
-                } else if (lmp.gType().equals(LMProtocol.Type.COMMAND)) {
-                    System.out.println("COMMANDS ARE NOT IMPLEMENTED! [" + lmp.gMSG() + "]");
-                } else if (lmp.gType().equals(LMProtocol.Type.MESSAGE)) {
-                    System.out.println("ECHO :::  " + lmp.gMSG());
+        try {
+            user = UserData.login();
+            System.out.println(R.language.get("loggedIn") + "[" + user.gUsername() + "]!");
+            while ((cmd = System.console().readLine()) != null) {
+                try {
+                    LMProtocol lmp = new LMProtocol(cmd);
+                    String prefix = "<" + user.gUsername() + "> ";
+                    if (lmp.gType().equals(LMProtocol.Type.SHUTDOWN)) {
+                        R.logger.WARNING(prefix + R.language.get("systemShutdown"));
+                        stop();
+                    } else if (lmp.gType().equals(LMProtocol.Type.COMMAND)) {
+                        System.out.println(prefix + R.language.get("missingCommand") + " [" + lmp.gMSG() + "]");
+                        R.logger.LOG(prefix + lmp.gMSG());
+                    } else if (lmp.gType().equals(LMProtocol.Type.MESSAGE)) {
+                        R.logger.LOG(prefix + "ECHO :::  " + lmp.gMSG());
+                    }
+                } catch (LMPFault e) {
+                    R.logger.ERROR(e);
+                    R.logger.ERROR(e.getFault());
                 }
-            } catch (LMPFault e) {
-                R.logger.ERROR(e);
-                R.logger.ERROR(e.getFault());
             }
+        } catch (IOException e1) {
+            R.logger.ERROR(e1);
         }
-        in.close();
     }
 
     @Override
     public void stop() {
-        R.logger.WARNING(R.language.get("moduleStop"));
+        R.logger.WARNING("LunaIO " + R.language.get("moduleStop"));
+        R.core.stop();
     }
 
-    /**
-     * login
-     * 
-     * @return false if failed
-     * @throws IOException
-     */
-    private boolean login(Scanner in) {
-        int tries = 0;
-        while (true) {
-            if (tries <= 3) {
-                System.out.print("Please Enter username :: ");
-                String username = in.nextLine();
-                System.out.print("Please Enter password :: ");
-                String password = in.nextLine();
-
-                try {
-                    UserData ud = UserData.login(username, password);
-                    if (ud.gLoggedIn()) {
-                        return true;
-                    }
-                } catch (IOException e) {
-                    R.logger.ERROR(e);
-                }
-                tries++;
-            } else {
-                System.out.println("BRO U FUCKED UP! THREE TIMES HAHA FCK OFF!");
-                System.exit(3);
-            }
-        }
-    }
 }
