@@ -17,8 +17,8 @@ public class Core implements ModuleStructure {
 
     /** Constructor */
     public Core() {
-        start();
         System.out.println("Welcome to LUNA");
+        start();
         stop();
     }
 
@@ -27,19 +27,22 @@ public class Core implements ModuleStructure {
      */
     @Override
     public void start() {
+        R.logger = new Logger();
+        R.fileHelper = new FileHelper();
+        R.logger.INFO("Core-bootup");
         R.core = this;
         R.users = new HashMap<String, UserData>();
-        R.fileHelper = new FileHelper();
         try {
             R.loadUsers();
             if (!R.users.containsKey("admin")) {
                 R.users.put("admin",
                         new UserData("admin", "password", true));
+                R.logger.INFO("Created default admin Account");
             }
         } catch (IOException e) {
             R.logger.ERROR(e);
         }
-        R.logger.INFO("Core module started");
+        R.logger.INFO("Core started");
     }
 
     /**
@@ -47,7 +50,7 @@ public class Core implements ModuleStructure {
      */
     @Override
     public void stop() {
-        R.logger.WARNING("Core module started");
+        R.logger.WARNING("Core shutting down");
         R.logger.stop();
         System.exit(1);
     }

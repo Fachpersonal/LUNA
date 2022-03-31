@@ -5,3 +5,25 @@ build-18 <13:44:16>  [ERROR] :: Whilst loading User::Marek [birthday is set to '
 build-18 <13:44:16>  [INFO] :: Core module started!
 build-18 <13:44:16>  [WARNING] :: Core module stopped!
 build-18 <13:44:16>  [WARNING] :: Logger module stopped!
+build-19 <17:34:26>  [INFO] :: Core module started!
+build-19 <17:34:26>  [WARNING] :: Core module started!
+build-19 <17:34:26>  [WARNING] :: Logger module started!
+build-19 <17:35:41>  [INFO] :: Created default admin Account!
+build-19 <17:35:41>  [INFO] :: Core module started!
+build-19 <17:35:41>  [WARNING] :: Core module started!
+build-19 <17:35:41>  [WARNING] :: Logger module started!
+build-19 <17:37:30>  [INFO] :: Created default admin Account!
+build-19 <17:37:30>  [INFO] :: Core module started!
+build-19 <17:37:30>  [WARNING] :: Core module shutting down!
+build-19 <17:37:30>  [WARNING] :: Logger module shutting down!
+build-19 <17:38:27>  [INFO] :: Core module started!
+build-19 <17:38:27>  [WARNING] :: Core module shutting down!
+build-19 <17:38:27>  [WARNING] :: Logger module shutting down!
+build-19 <17:38:47>  [INFO] :: Core-bootup!
+build-19 <17:38:47>  [INFO] :: Core module started!
+build-19 <17:38:47>  [WARNING] :: Core module shutting down!
+build-19 <17:38:47>  [WARNING] :: Logger module shutting down!
+build-19 <17:39:18>  [INFO] :: Core-bootup!
+build-19 <17:39:18>  [INFO] :: Core started!
+build-19 <17:39:18>  [WARNING] :: Core shutting down!
+build-19 <17:39:18>  [WARNING] :: Logger module shutting down!

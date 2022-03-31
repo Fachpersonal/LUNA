@@ -34,7 +34,7 @@ public class Logger implements ModuleStructure {
     /** Stop function of Logger */
     @Override
     public void stop() {
-        WARNING("Logger module started");
+        WARNING("Logger module shutting down");
         R.logger = null;
     }
 
