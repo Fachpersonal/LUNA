@@ -1,0 +1,22 @@
+
+build-18 <8:50:50>  [WARNING] :: System config could not be loaded! loading default config!!
+build-18 <8:50:50>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+build-18 <8:50:50>  [ERROR] :: java.time.format.DateTimeParseException: Text 'null' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:415)
+	at net.falscheridiot.luna.util.R.loadUser(R.java:164)
+	at net.falscheridiot.luna.modules.Core.start(Core.java:57)
+	at net.falscheridiot.luna.modules.Core.<init>(Core.java:21)
+	at net.falscheridiot.luna.App.main(App.java:7)
+
+build-18 <8:50:50>  [INFO] :: Core module started!
+build-18 <8:50:50>  [WARNING] :: Core module stopped!
+build-18 <8:50:50>  [WARNING] :: Logger module stopped!
+build-18 <9:10:14>  [WARNING] :: System config could not be loaded! loading default config!!
+build-18 <9:10:14>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+build-18 <9:10:14>  [ERROR] :: Whilst loading User::Marek [birthday is set to 'null']!
+build-18 <9:10:14>  [INFO] :: Core module started!
+build-18 <9:10:14>  [WARNING] :: Core module stopped!
+build-18 <9:10:14>  [WARNING] :: Logger module stopped!

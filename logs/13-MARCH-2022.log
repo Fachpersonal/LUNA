@@ -39,3 +39,114 @@
 <0:43:20>  [WARNING] :: <admin> System shutting down!
 <0:43:20>  [WARNING] :: LunaIO module stopped!
 <0:43:20>  [WARNING] :: Core module stopped!
+<5:37:17>  [WARNING] :: System config could not be loaded! loading default config!!
+<5:37:17>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<5:37:17>  [INFO] :: LunaIO module started!
+<5:37:45>  [ERROR] :: java.time.format.DateTimeParseException: Text 'Gustav' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:415)
+	at net.luna.util.UserData.register(UserData.java:99)
+	at net.luna.util.UserData.login(UserData.java:28)
+	at net.luna.modules.LunaIO.start(LunaIO.java:33)
+	at net.luna.modules.LunaIO.<init>(LunaIO.java:24)
+	at net.luna.modules.Core.start(Core.java:65)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+<5:38:12>  [ERROR] :: java.lang.NumberFormatException: For input string: "Baum"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at net.luna.util.UserData.register(UserData.java:107)
+	at net.luna.util.UserData.login(UserData.java:28)
+	at net.luna.modules.LunaIO.start(LunaIO.java:33)
+	at net.luna.modules.LunaIO.<init>(LunaIO.java:24)
+	at net.luna.modules.Core.start(Core.java:65)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+<5:38:12>  [INFO] :: New user registered! [Louisa]!
+<5:38:46>  <Louisa> ECHO :::  Hallo
+<5:38:57>  <Louisa> help
+<5:39:9>  [WARNING] :: <Louisa> System shutting down!
+<5:39:9>  [WARNING] :: LunaIO module stopped!
+<5:39:9>  [WARNING] :: Core module stopped!
+<5:40:12>  [WARNING] :: System config could not be loaded! loading default config!!
+<5:40:12>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<5:40:12>  [ERROR] :: java.time.format.DateTimeParseException: Text 'null' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:415)
+	at net.luna.util.R.loadUser(R.java:166)
+	at net.luna.modules.Core.start(Core.java:57)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+<5:40:12>  [INFO] :: LunaIO module started!
+<5:40:21>  [WARNING] :: <admin> System shutting down!
+<5:40:21>  [WARNING] :: LunaIO module stopped!
+<5:40:21>  [WARNING] :: Core module stopped!
+<5:40:21>  [WARNING] :: Loggermodule stopped!
+<5:40:33>  [WARNING] :: System config could not be loaded! loading default config!!
+<5:40:33>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+<5:40:33>  [ERROR] :: java.time.format.DateTimeParseException: Text 'null' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:415)
+	at net.luna.util.R.loadUser(R.java:166)
+	at net.luna.modules.Core.start(Core.java:57)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+<5:40:33>  [INFO] :: LunaIO module started!
+<5:40:43>  [WARNING] :: <admin> System shutting down!
+<5:40:43>  [WARNING] :: LunaIO module stopped!
+<5:40:43>  [WARNING] :: Core module stopped!
+<5:40:43>  [WARNING] :: Logger module stopped!
+build-18 <18:20:18>  [WARNING] :: System config could not be loaded! loading default config!!
+build-18 <18:20:18>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+build-18 <18:20:18>  [ERROR] :: java.time.format.DateTimeParseException: Text 'null' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:415)
+	at net.luna.util.R.loadUser(R.java:166)
+	at net.luna.modules.Core.start(Core.java:57)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+build-18 <18:20:18>  [INFO] :: LunaIO module started!
+build-18 <18:21:44>  <admin> ECHO :::  asd
+build-18 <18:21:50>  <admin> HelloWorld
+build-18 <18:21:58>  [WARNING] :: <admin> System shutting down!
+build-18 <18:21:58>  [WARNING] :: LunaIO module stopped!
+build-18 <18:21:58>  [WARNING] :: Core module stopped!
+build-18 <18:21:58>  [WARNING] :: Logger module stopped!
+build-18 <18:23:4>  [WARNING] :: System config could not be loaded! loading default config!!
+build-18 <18:23:4>  [WARNING] :: System language could not be loaded! loading default language(EN_US)!!
+build-18 <18:23:4>  [INFO] :: LunaIO module started!
+build-18 <18:26:10>  [ERROR] :: java.time.format.DateTimeParseException: Text 'Pommes' could not be parsed at index 0
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2052)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:1954)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:430)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:415)
+	at net.luna.util.UserData.register(UserData.java:99)
+	at net.luna.util.UserData.login(UserData.java:28)
+	at net.luna.modules.LunaIO.start(LunaIO.java:33)
+	at net.luna.modules.LunaIO.<init>(LunaIO.java:24)
+	at net.luna.modules.Core.start(Core.java:65)
+	at net.luna.modules.Core.<init>(Core.java:21)
+	at net.luna.App.main(App.java:14)
+
+build-18 <18:26:39>  [INFO] :: New user registered! [Marek]!
+build-18 <18:27:35>  <Marek> ECHO :::  zcvsdvg
+build-18 <18:27:36>  <Marek> ECHO :::  asdf
+build-18 <18:27:36>  <Marek> ECHO :::  asd
+build-18 <18:27:39>  [WARNING] :: <Marek> System shutting down!
+build-18 <18:27:39>  [WARNING] :: LunaIO module stopped!
+build-18 <18:27:39>  [WARNING] :: Core module stopped!
+build-18 <18:27:39>  [WARNING] :: Logger module stopped!
