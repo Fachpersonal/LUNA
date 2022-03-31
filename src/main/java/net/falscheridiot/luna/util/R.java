@@ -2,9 +2,6 @@ package net.falscheridiot.luna.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -52,15 +49,14 @@ public class R {
      */
     public static String encryptString(String message) {
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-
-            String uString = new BigInteger(1, md.digest(message.getBytes())).toString(16);
+            String uString = new java.math.BigInteger(1,
+                    java.security.MessageDigest.getInstance("SHA-256").digest(message.getBytes())).toString(16);
 
             while (uString.length() < 32) {
                 uString = "0" + uString;
             }
             return uString;
-        } catch (NoSuchAlgorithmException e) {
+        } catch (java.security.NoSuchAlgorithmException e) {
             R.logger.ERROR(e);
         }
         return null;
