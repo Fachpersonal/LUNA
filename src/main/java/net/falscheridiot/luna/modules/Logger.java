@@ -13,7 +13,7 @@ import net.falscheridiot.luna.util.R;
  * Logger
  * 
  * @author @falscherIdiot
- * @version 3
+ * @version 1.4
  * @see ModuleStructure
  */
 public class Logger implements ModuleStructure {
@@ -34,7 +34,7 @@ public class Logger implements ModuleStructure {
     /** Stop function of Logger */
     @Override
     public void stop() {
-        WARNING("Logger " + R.language.get("moduleStop"));
+        WARNING("Logger module started");
         R.logger = null;
     }
 
@@ -47,7 +47,7 @@ public class Logger implements ModuleStructure {
     public void LOG(String msg) {
         try {
             System.out.println("build-" + R.buildNr + " <" + getTime() + ">  " + msg);
-            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+            R.fileHelper.writeFile("./logs/" + getDate() + ".log",
                     "build-" + R.buildNr + " <" + getTime() + ">  " + msg, true);
         } catch (Exception e) {
             ERROR(e);
@@ -62,7 +62,7 @@ public class Logger implements ModuleStructure {
     public void INFO(String msg) {
         try {
             System.out.println("build-" + R.buildNr + " <" + getTime() + ">  [INFO] :: " + msg + "!");
-            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+            R.fileHelper.writeFile("./logs/" + getDate() + ".log",
                     "build-" + R.buildNr + " <" + getTime() + ">  [INFO] :: " + msg + "!", true);
         } catch (Exception e) {
             ERROR(e);
@@ -78,7 +78,7 @@ public class Logger implements ModuleStructure {
     public void WARNING(String msg) {
         try {
             System.out.println("build-" + R.buildNr + " <" + getTime() + ">  [WARNING] :: " + msg + "!");
-            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+            R.fileHelper.writeFile("./logs/" + getDate() + ".log",
                     "build-" + R.buildNr + " <" + getTime() + ">  [WARNING] :: " + msg + "!", true);
         } catch (Exception e) {
             ERROR(e);
@@ -94,7 +94,7 @@ public class Logger implements ModuleStructure {
     public void ERROR(String msg) {
         try {
             System.out.println("build-" + R.buildNr + " <" + getTime() + ">  [ERROR] :: " + msg + "!");
-            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+            R.fileHelper.writeFile("./logs/" + getDate() + ".log",
                     "build-" + R.buildNr + " <" + getTime() + ">  [ERROR] :: " + msg + "!", true);
         } catch (Exception e) {
             ERROR(e);
@@ -112,7 +112,7 @@ public class Logger implements ModuleStructure {
             StringWriter sw = new StringWriter();
             e.printStackTrace(new PrintWriter(sw));
             System.out.println("build-" + R.buildNr + " <" + getTime() + ">  [ERROR] :: " + sw.toString() + "!");
-            R.fileHelper.writeFile(R.config.get("logDir") + getDate() + ".log",
+            R.fileHelper.writeFile("./logs/" + getDate() + ".log",
                     "build-" + R.buildNr + " <" + getTime() + ">  [ERROR] :: " + sw.toString(), true);
         } catch (Exception e1) {
             e1.printStackTrace();

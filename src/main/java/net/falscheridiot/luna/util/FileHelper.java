@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * FileHelper
  * 
  * @author @falscherIdiot
- * @version 2
+ * @version 1.2
  */
 public class FileHelper {
     private File file;
