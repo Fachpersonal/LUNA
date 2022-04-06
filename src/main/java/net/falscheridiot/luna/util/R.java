@@ -1,12 +1,14 @@
 package net.falscheridiot.luna.util;
 
-import java.io.File;
-import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import net.falscheridiot.luna.modules.ClientHandler;
 import net.falscheridiot.luna.modules.Core;
 import net.falscheridiot.luna.modules.Logger;
+import net.falscheridiot.luna.util.commands.Command;
+import net.falscheridiot.luna.util.commands.CreateUser;
 
 /**
  * @author @falscherIdiot
@@ -14,31 +16,21 @@ import net.falscheridiot.luna.modules.Logger;
  * @since 08-03-2022
  */
 public class R {
-    public static int buildNr = 19; // Github commit counter [13-03-2022]
+    public static int buildNr = 20; // Github commit counter [13-03-2022]
     public static Core core = null;
     public static FileHelper fileHelper = null;
     public static Logger logger = null;
-    public static HashMap<String, UserData> users;
+    public static ServerSocket uServerSocket;
+    public static Thread uThread;
+    public static final char uPREFIX = '!';
+    public static HashMap<Integer, ClientHandler> clients;
+    public static ArrayList<Command> commands;
 
-    /**
-     * loads Users from Files
-     * 
-     * @throws IOException
-     */
-    public static void loadUsers() throws IOException {
-        File[] userFiles = new File("./res/userData/").listFiles();
-        for (File file : userFiles) {
-            if (!file.getPath().contains(".lud")) {
-                continue;
-            }
-            R.fileHelper.readFile(file);
-            ArrayList<String> content = R.fileHelper.gContent();
-            String un = null, pw = null;
-            un = content.get(0);
-            pw = content.get(1);
-            users.put(un, new UserData(un, pw, false));
-            R.fileHelper.unloadSafedFile();
+    public static void loadCommands() {
+        if (commands == null) {
+            commands = new ArrayList<Command>();
         }
+        commands.add(new CreateUser());
     }
 
     /**
