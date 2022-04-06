@@ -3,12 +3,10 @@ package net.falscheridiot.luna.modules;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 
 import net.falscheridiot.luna.util.FileHelper;
 import net.falscheridiot.luna.util.ModuleStructure;
 import net.falscheridiot.luna.util.R;
-import net.falscheridiot.luna.util.commands.Command;
 
 /**
  * @author @falscherIdiot
@@ -33,7 +31,6 @@ public class Core implements ModuleStructure {
         R.fileHelper = new FileHelper();
         R.logger.INFO("Core-bootup");
         R.core = this;
-        R.commands = new ArrayList<Command>();
 
         try {
             R.uServerSocket = new ServerSocket(8105);

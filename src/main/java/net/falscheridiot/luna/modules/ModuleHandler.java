@@ -49,7 +49,7 @@ public class ModuleHandler implements ModuleStructure, Runnable {
         }
     }
 
-    private Socket gSocket() {
+    public Socket gSocket() {
         return socket;
     }
 
