@@ -1,4 +1,4 @@
-package net.falscheridiot.luna.util;
+package net.falscheridiot.luna.server.util;
 
 /**
  * @author @falscherIdiot

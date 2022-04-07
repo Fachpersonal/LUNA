@@ -1,12 +1,12 @@
-package net.falscheridiot.luna.modules;
+package net.falscheridiot.luna.server.modules;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import net.falscheridiot.luna.util.FileHelper;
-import net.falscheridiot.luna.util.ModuleStructure;
-import net.falscheridiot.luna.util.R;
+import net.falscheridiot.luna.server.util.FileHelper;
+import net.falscheridiot.luna.server.util.ModuleStructure;
+import net.falscheridiot.luna.server.util.R;
 
 /**
  * @author @falscherIdiot

@@ -1,4 +1,4 @@
-package net.falscheridiot.luna.modules;
+package net.falscheridiot.luna.server.modules;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,8 +6,8 @@ import java.io.StringWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import net.falscheridiot.luna.util.ModuleStructure;
-import net.falscheridiot.luna.util.R;
+import net.falscheridiot.luna.server.util.ModuleStructure;
+import net.falscheridiot.luna.server.util.R;
 
 /**
  * Logger

@@ -1,4 +1,4 @@
-package net.falscheridiot.luna.modules;
+package net.falscheridiot.luna.server.modules;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import net.falscheridiot.luna.util.ModuleStructure;
-import net.falscheridiot.luna.util.R;
+import net.falscheridiot.luna.server.util.ModuleStructure;
+import net.falscheridiot.luna.server.util.R;
 
 public class ModuleHandler implements ModuleStructure, Runnable {
 

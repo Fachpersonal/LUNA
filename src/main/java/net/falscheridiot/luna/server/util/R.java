@@ -1,11 +1,11 @@
-package net.falscheridiot.luna.util;
+package net.falscheridiot.luna.server.util;
 
 import java.net.ServerSocket;
 import java.util.HashMap;
 
-import net.falscheridiot.luna.modules.ClientHandler;
-import net.falscheridiot.luna.modules.Core;
-import net.falscheridiot.luna.modules.Logger;
+import net.falscheridiot.luna.server.modules.ClientHandler;
+import net.falscheridiot.luna.server.modules.Core;
+import net.falscheridiot.luna.server.modules.Logger;
 
 /**
  * @author @falscherIdiot

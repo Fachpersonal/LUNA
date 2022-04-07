@@ -1,6 +1,6 @@
-package net.falscheridiot.luna.util.commands;
+package net.falscheridiot.luna.server.util.commands;
 
-import net.falscheridiot.luna.modules.ClientHandler;
+import net.falscheridiot.luna.server.modules.ClientHandler;
 
 public abstract class Command {
     protected final String cmd;
