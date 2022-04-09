@@ -1,9 +1,5 @@
 package net.falscheridiot.luna.server.util;
 
-import java.net.ServerSocket;
-import java.util.HashMap;
-
-import net.falscheridiot.luna.server.modules.ClientHandler;
 import net.falscheridiot.luna.server.modules.Core;
 import net.falscheridiot.luna.server.modules.Logger;
 
@@ -17,10 +13,6 @@ public class R {
     public static Core core = null;
     public static FileHelper fileHelper = null;
     public static Logger logger = null;
-    public static ServerSocket uServerSocket;
-    public static Thread uThread;
-    public static final char uPREFIX = '!';
-    public static HashMap<Integer, ClientHandler> clients;
 
     /**
      * Encrypts given string using SHA-512 Method

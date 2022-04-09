@@ -1,0 +1,35 @@
+package net.falscheridiot.luna.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class TestClient {
+    public static void main(String[] args) throws UnknownHostException, IOException {
+        Socket client = new Socket("localhost", 8105);
+        System.out.println("Client connected");
+        BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        PrintWriter pw = new PrintWriter(client.getOutputStream());
+        String sMsg, sReply;
+        while (true) {
+            sReply = System.console().readLine();
+            pw.println(sReply);
+            pw.flush();
+            while ((sMsg = br.readLine()) != null) {
+                if (sMsg.equals("LUNA-END")) {
+                    break;
+                }
+                System.out.println(sMsg);
+            }
+            if (sReply.equalsIgnoreCase("QUIT")) {
+                break;
+            }
+        }
+        br.close();
+        pw.close();
+        client.close();
+    }
+}

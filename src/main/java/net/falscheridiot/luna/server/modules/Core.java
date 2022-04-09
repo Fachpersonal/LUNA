@@ -1,9 +1,5 @@
 package net.falscheridiot.luna.server.modules;
 
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-
 import net.falscheridiot.luna.server.util.FileHelper;
 import net.falscheridiot.luna.server.util.ModuleStructure;
 import net.falscheridiot.luna.server.util.R;
@@ -31,33 +27,6 @@ public class Core implements ModuleStructure {
         R.fileHelper = new FileHelper();
         R.logger.INFO("Core-bootup");
         R.core = this;
-
-        try {
-            R.uServerSocket = new ServerSocket(8105);
-            R.uServerSocket.setReuseAddress(true);
-            R.uServerSocket.setSoTimeout(60000);
-        } catch (IOException e) {
-            R.logger.ERROR("User-Server could not be started");
-            R.logger.ERROR("Core-bootup failed! Please contact @falscherIdiot");
-            stop();
-        }
-        R.logger.INFO("Core started");
-        R.uThread = new Thread() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        Socket c = R.uServerSocket.accept();
-                        ClientHandler ch = new ClientHandler(c);
-                        R.clients.put(R.clients.size() + 1, ch);
-                        new Thread(ch).start();
-                    } catch (IOException e) {
-                        R.logger.ERROR(e);
-                    }
-                }
-            }
-        };
-        R.uThread.start();
     }
 
     /**
@@ -67,12 +36,6 @@ public class Core implements ModuleStructure {
     public void stop() {
         R.logger.WARNING("Core shutting down");
         R.logger.stop();
-        try {
-            R.uServerSocket.close();
-        } catch (IOException e) {
-            R.logger.ERROR(e);
-        }
-        R.uThread = null;
         System.exit(1);
     }
 
