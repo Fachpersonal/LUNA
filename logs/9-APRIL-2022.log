@@ -1,0 +1,152 @@
+
+build-20 <19:39:9>  [INFO] :: Core starting...!
+build-20 <19:39:9>  [INFO] :: Core successfully started!
+build-20 <19:40:42>  [INFO] :: Core starting...!
+build-20 <19:40:42>  [INFO] :: Core successfully started!
+build-20 <19:41:6>  [INFO] :: Core starting...!
+build-20 <19:41:6>  [INFO] :: Core successfully started!
+build-20 <19:42:9>  [WARNING] :: Invalid CLIENT!! [/127.0.0.1]!
+build-20 <19:43:53>  [INFO] :: Core starting...!
+build-20 <19:43:53>  [INFO] :: Core successfully started!
+build-20 <19:44:0>  [WARNING] :: Invalid CLIENT!! [/127.0.0.1]!
+build-20 <19:46:41>  [INFO] :: Core starting...!
+build-20 <19:46:41>  [INFO] :: Core successfully started!
+build-20 <19:46:49>  [WARNING] :: Invalid CLIENT!! [/127.0.0.1]!
+build-20 <19:47:54>  [INFO] :: Core starting...!
+build-20 <19:47:54>  [INFO] :: Core successfully started!
+build-20 <19:49:26>  [INFO] :: Core starting...!
+build-20 <19:49:26>  [INFO] :: Core successfully started!
+build-20 <19:49:34>  [WARNING] :: Core stopping...!
+build-20 <19:49:34>  [WARNING] :: Logger module shutting down!
+build-20 <19:50:32>  [INFO] :: Core starting...!
+build-20 <19:50:32>  [INFO] :: Core successfully started!
+build-20 <19:50:39>  [INFO] :: UserData found for user: admin!
+build-20 <19:50:39>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:50:39>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <19:52:55>  [INFO] :: Core starting...!
+build-20 <19:52:55>  [INFO] :: Core successfully started!
+build-20 <19:53:2>  [INFO] :: UserData found for user: admin!
+build-20 <19:53:2>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:53:2>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <19:54:3>  [INFO] :: Core starting...!
+build-20 <19:54:3>  [INFO] :: Core successfully started!
+build-20 <19:54:10>  [INFO] :: UserData found for user: admin!
+build-20 <19:54:10>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:54:10>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <19:55:19>  [INFO] :: Core starting...!
+build-20 <19:55:19>  [INFO] :: Core successfully started!
+build-20 <19:56:19>  [ERROR] :: java.net.SocketTimeoutException: Accept timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:708)
+	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:675)
+	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:641)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:617)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:574)
+	at java.base/java.net.ServerSocket.accept(ServerSocket.java:532)
+	at net.falscheridiot.luna.server.modules.Core.start(Core.java:39)
+	at net.falscheridiot.luna.server.modules.Core.<init>(Core.java:20)
+	at net.falscheridiot.luna.server.App.main(App.java:7)
+
+build-20 <19:56:19>  [WARNING] :: Core stopping...!
+build-20 <19:56:19>  [WARNING] :: Logger module shutting down!
+build-20 <19:57:13>  [INFO] :: Core starting...!
+build-20 <19:57:13>  [INFO] :: Core successfully started!
+build-20 <19:57:19>  [INFO] :: UserData found for user: admin!
+build-20 <19:57:19>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:57:19>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:0:0>  [INFO] :: Core starting...!
+build-20 <20:1:18>  [INFO] :: Core starting...!
+build-20 <20:1:18>  [INFO] :: Core successfully started!
+build-20 <20:1:24>  [INFO] :: UserData found for user: admin!
+build-20 <20:1:24>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:1:24>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:9:35>  [INFO] :: Core starting...!
+build-20 <20:9:35>  [INFO] :: Core successfully started!
+build-20 <20:9:40>  [INFO] :: UserData found for user: admin!
+build-20 <20:9:40>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:9:40>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:9:41>  [INFO] :: Received: asd!
+build-20 <20:9:41>  [INFO] :: Received: &LUNA-ENDL&!
+build-20 <20:10:0>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:12:59>  [INFO] :: Core starting...!
+build-20 <20:12:59>  [INFO] :: Core successfully started!
+build-20 <20:13:4>  [WARNING] :: UserData not found for user: ADMIN!
+build-20 <20:13:4>  [ERROR] :: net.falscheridiot.luna.server.util.errors.UserNotFound: User not found!
+	at net.falscheridiot.luna.server.util.UserData.<init>(UserData.java:31)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:42)
+	at net.falscheridiot.luna.server.modules.Core.start(Core.java:39)
+	at net.falscheridiot.luna.server.modules.Core.<init>(Core.java:20)
+	at net.falscheridiot.luna.server.App.main(App.java:7)
+
+build-20 <20:13:4>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:13:4>  [INFO] :: ClientHandler started [0.0.0.0/0.0.0.0]!
+build-20 <20:13:4>  [ERROR] :: java.io.IOException: Stream closed
+	at java.base/java.io.BufferedReader.ensureOpen(BufferedReader.java:123)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:321)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:75)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:56)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:50)
+	at net.falscheridiot.luna.server.modules.Core.start(Core.java:39)
+	at net.falscheridiot.luna.server.modules.Core.<init>(Core.java:20)
+	at net.falscheridiot.luna.server.App.main(App.java:7)
+
+build-20 <20:13:18>  [INFO] :: Core starting...!
+build-20 <20:13:18>  [INFO] :: Core successfully started!
+build-20 <20:13:23>  [INFO] :: UserData found for user: admin!
+build-20 <20:13:23>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:13:23>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:13:26>  [INFO] :: Received: asd!
+build-20 <20:13:31>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:14:5>  [INFO] :: UserData found for user: admin!
+build-20 <20:14:5>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:14:5>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:14:6>  [INFO] :: Received: asd!
+build-20 <20:14:6>  [INFO] :: Received: &LUNA-ENDL&!
+build-20 <20:14:11>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:22:31>  [INFO] :: Core starting...!
+build-20 <20:22:31>  [INFO] :: Core successfully started!
+build-20 <20:22:38>  [INFO] :: UserData found for user: admin!
+build-20 <20:22:38>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:22:38>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:22:49>  [INFO] :: Received: asd!
+build-20 <20:22:49>  [INFO] :: Received: &LUNA-ENDL&!
+build-20 <20:23:41>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:23:48>  [INFO] :: Core starting...!
+build-20 <20:23:48>  [INFO] :: Core successfully started!
+build-20 <20:23:54>  [WARNING] :: UserData not found for user: !
+build-20 <20:23:54>  [ERROR] :: net.falscheridiot.luna.server.util.errors.UserNotFound: User not found!
+	at net.falscheridiot.luna.server.util.UserData.<init>(UserData.java:31)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:42)
+	at net.falscheridiot.luna.server.modules.Core.start(Core.java:39)
+	at net.falscheridiot.luna.server.modules.Core.<init>(Core.java:20)
+	at net.falscheridiot.luna.server.App.main(App.java:7)
+
+build-20 <20:23:54>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:23:54>  [INFO] :: ClientHandler started [0.0.0.0/0.0.0.0]!
+build-20 <20:23:54>  [ERROR] :: java.io.IOException: Stream closed
+	at java.base/java.io.BufferedReader.ensureOpen(BufferedReader.java:123)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:321)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:75)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:56)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:50)
+	at net.falscheridiot.luna.server.modules.Core.start(Core.java:39)
+	at net.falscheridiot.luna.server.modules.Core.<init>(Core.java:20)
+	at net.falscheridiot.luna.server.App.main(App.java:7)
+
+build-20 <20:25:5>  [INFO] :: Core starting...!
+build-20 <20:25:5>  [INFO] :: Core successfully started!
+build-20 <20:25:18>  [INFO] :: UserData found for user: admin!
+build-20 <20:25:18>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:25:18>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:25:20>  [INFO] :: Received: asd!
+build-20 <20:25:26>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <20:46:32>  [INFO] :: Core starting...!
+build-20 <20:46:32>  [INFO] :: Core successfully started!
+build-20 <20:46:43>  [INFO] :: UserData found for user: admin!
+build-20 <20:46:43>  [INFO] :: UserData password correct for user: admin!
+build-20 <20:46:43>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <20:46:46>  [INFO] :: Received: asd!
+build-20 <20:46:57>  [WARNING] :: Core stopping...!
+build-20 <20:46:57>  [WARNING] :: Logger module shutting down!

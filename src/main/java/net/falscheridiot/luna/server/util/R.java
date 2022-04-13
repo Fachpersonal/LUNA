@@ -1,18 +1,34 @@
 package net.falscheridiot.luna.server.util;
 
+import java.net.ServerSocket;
+import java.util.HashMap;
+
+import net.falscheridiot.luna.server.modules.ClientHandler;
 import net.falscheridiot.luna.server.modules.Core;
 import net.falscheridiot.luna.server.modules.Logger;
 
 /**
  * @author @falscherIdiot
- * @version 1.4
+ * @version 1.5
  * @since 08-03-2022
  */
 public class R {
-    public static int buildNr = 20; // Github commit counter [13-03-2022]
+    public static int buildNr = 21; // Github commit counter [13-03-2022]
+
+    // ? MODULES
     public static Core core = null;
     public static FileHelper fileHelper = null;
     public static Logger logger = null;
+
+    // ? SERVER-CLIENT
+    public static ServerSocket serverSocket = null;
+    public static HashMap<String, ClientHandler> users = new HashMap<>();
+
+    public static void broadcast(String message) {
+        for (ClientHandler ch : users.values()) {
+            ch.send("[BROADCAST] :: " + message);
+        }
+    }
 
     /**
      * Encrypts given string using SHA-512 Method

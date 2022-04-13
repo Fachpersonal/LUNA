@@ -1,0 +1,294 @@
+
+build-20 <18:56:58>  [INFO] :: Core starting...!
+build-20 <18:56:58>  [INFO] :: Core successfully started!
+build-20 <18:58:29>  [INFO] :: UserData found for user: admin!
+build-20 <18:58:29>  [WARNING] :: UserData password incorrect for user: admin!
+build-20 <18:58:29>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <18:58:32>  [INFO] :: Received: asd!
+build-20 <19:13:13>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <19:16:41>  [INFO] :: Core starting...!
+build-20 <19:16:41>  [WARNING] :: Core stopping...!
+build-20 <19:16:41>  [INFO] :: Core successfully started!
+build-20 <19:16:50>  [INFO] :: UserData found for user: admin!
+build-20 <19:16:50>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:16:50>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <19:16:58>  [INFO] :: Received: Yolo!
+build-20 <19:17:25>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <19:20:33>  [INFO] :: Core starting...!
+build-20 <19:20:33>  [WARNING] :: Core stopping...!
+build-20 <19:20:33>  [INFO] :: Core successfully started!
+build-20 <19:21:46>  [INFO] :: Core starting...!
+build-20 <19:21:46>  [INFO] :: Core successfully started!
+build-20 <19:22:4>  [INFO] :: UserData found for user: admin!
+build-20 <19:22:4>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:22:4>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <19:22:21>  [INFO] :: Received: !
+build-20 <19:22:23>  [INFO] :: ClientHandler stopped [0.0.0.0/0.0.0.0]!
+build-20 <19:25:24>  [INFO] :: Core starting...!
+build-20 <19:25:25>  [INFO] :: Core successfully started!
+build-20 <19:25:27>  [ERROR] :: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1515)
+	at net.falscheridiot.luna.server.modules.Core$2.run(Core.java:58)
+
+build-20 <19:25:45>  [INFO] :: UserData found for user: admin!
+build-20 <19:25:45>  [INFO] :: UserData password correct for user: admin!
+build-20 <19:25:45>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <19:25:52>  [ERROR] :: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1515)
+	at net.falscheridiot.luna.server.modules.Core$2.run(Core.java:58)
+
+build-20 <19:25:56>  [INFO] :: Received: TEST!
+build-20 <19:26:0>  [INFO] :: Received: TEAS!
+build-20 <19:26:3>  [INFO] :: Received: LUL!
+build-20 <19:26:7>  [INFO] :: Received: omfg!
+build-20 <19:26:13>  [INFO] :: Received: dis shit works haha!!
+build-20 <19:27:24>  [WARNING] :: Core stopping...!
+build-20 <19:27:24>  [WARNING] :: Logger module shutting down!
+build-20 <22:24:49>  [INFO] :: Core starting...!
+build-20 <22:24:52>  [INFO] :: Core successfully started!
+build-20 <22:31:54>  [INFO] :: Core starting...!
+build-20 <22:31:54>  [INFO] :: Core successfully started!
+build-20 <22:34:0>  [ERROR] :: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:48)
+	at java.base/java.lang.String.charAt(String.java:1512)
+	at net.falscheridiot.luna.server.modules.Core$2.run(Core.java:59)
+
+build-20 <22:34:15>  [WARNING] :: Core stopping...!
+build-20 <22:34:15>  [WARNING] :: Logger module shutting down!
+build-20 <22:34:29>  [INFO] :: Core starting...!
+build-20 <22:34:29>  [INFO] :: Core successfully started!
+build-20 <22:34:39>  [INFO] :: UserData found for user: admin!
+build-20 <22:34:39>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:34:39>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:34:39>  [ERROR] :: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:74)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:68)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:34:39>  [ERROR] :: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+build-20 <22:36:2>  [INFO] :: UserData found for user: admin!
+build-20 <22:36:2>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:36:2>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:36:35>  [/127.0.0.1] >> ASD
+build-20 <22:36:36>  [ERROR] :: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:323)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:74)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:68)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:36:36>  [ERROR] :: java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+build-20 <22:38:9>  [WARNING] :: Core stopping...!
+build-20 <22:38:9>  [WARNING] :: Logger module shutting down!
+build-20 <22:38:9>  [ERROR] :: java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endAccept(NioSocketImpl.java:689)
+	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:762)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:675)
+	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:641)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:617)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:574)
+	at java.base/java.net.ServerSocket.accept(ServerSocket.java:532)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:38:57>  [INFO] :: Core starting...!
+build-20 <22:38:58>  [INFO] :: Core successfully started!
+build-20 <22:39:5>  [INFO] :: UserData found for user: admin!
+build-20 <22:39:5>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:39:5>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:39:11>  [/127.0.0.1] >> asd
+build-20 <22:39:11>  [ERROR] :: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:74)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:68)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:39:11>  [ERROR] :: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+build-20 <22:40:47>  [WARNING] :: Core stopping...!
+build-20 <22:40:49>  [WARNING] :: Logger module shutting down!
+build-20 <22:41:13>  [INFO] :: Core starting...!
+build-20 <22:41:13>  [INFO] :: Core successfully started!
+build-20 <22:41:23>  [INFO] :: UserData found for user: admin!
+build-20 <22:41:23>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:41:23>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:42:23>  [INFO] :: Core starting...!
+build-20 <22:42:25>  [INFO] :: Core successfully started!
+build-20 <22:42:38>  [INFO] :: Core starting...!
+build-20 <22:42:38>  [INFO] :: Core successfully started!
+build-20 <22:43:47>  [INFO] :: UserData found for user: admin!
+build-20 <22:43:47>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:44:15>  [INFO] :: Core starting...!
+build-20 <22:44:15>  [INFO] :: Core successfully started!
+build-20 <22:44:33>  [INFO] :: UserData found for user: admin!
+build-20 <22:44:33>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:44:45>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:45:1>  [/127.0.0.1] >> asd
+build-20 <22:45:1>  [ERROR] :: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:74)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:68)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:45:24>  [INFO] :: Core starting...!
+build-20 <22:45:25>  [INFO] :: Core successfully started!
+build-20 <22:45:42>  [INFO] :: UserData found for user: admin!
+build-20 <22:45:42>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:46:1>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:48:57>  [/127.0.0.1] >> Hello Darkness is my friend
+build-20 <22:49:9>  [ERROR] :: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:74)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:68)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:49:22>  [ERROR] :: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+build-20 <22:49:32>  [INFO] :: UserData found for user: admin!
+build-20 <22:49:32>  [INFO] :: UserData password correct for user: admin!
+build-20 <22:49:36>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-20 <22:49:41>  [/127.0.0.1] >> ftgh
+build-20 <22:49:41>  [ERROR] :: java.net.SocketException: An established connection was aborted by the software in your host machine
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:325)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:270)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:313)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:188)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at net.falscheridiot.luna.server.modules.ClientHandler.receive(ClientHandler.java:124)
+	at net.falscheridiot.luna.server.modules.ClientHandler.run(ClientHandler.java:93)
+	at net.falscheridiot.luna.server.modules.ClientHandler.start(ClientHandler.java:74)
+	at net.falscheridiot.luna.server.modules.ClientHandler.<init>(ClientHandler.java:68)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)
+
+build-20 <22:50:16>  [WARNING] :: Core stopping...!
+build-20 <22:50:16>  [WARNING] :: Logger module shutting down!
+build-21 <22:56:23>  [INFO] :: Core starting...!
+build-21 <22:56:23>  [INFO] :: Core successfully started!
+build-21 <22:57:19>  [INFO] :: UserData found for user: admin!
+build-21 <22:57:21>  [INFO] :: UserData password correct for user: admin!
+build-21 <22:57:28>  [INFO] :: ClientHandler started [/127.0.0.1]!

@@ -1,0 +1,18 @@
+
+build-21 <16:31:18>  [INFO] :: Core starting...!
+build-21 <16:31:18>  [INFO] :: Core successfully started!
+build-21 <16:32:38>  [INFO] :: UserData found for user: admin!
+build-21 <16:32:38>  [INFO] :: UserData password correct for user: admin!
+build-21 <16:32:38>  [INFO] :: ClientHandler started [/127.0.0.1]!
+build-21 <16:34:2>  [/127.0.0.1] >> Pommes
+build-21 <16:44:12>  [WARNING] :: Core stopping...!
+build-21 <16:44:12>  [WARNING] :: Logger module shutting down!
+build-21 <16:44:12>  [ERROR] :: java.net.SocketException: Socket closed
+	at java.base/sun.nio.ch.NioSocketImpl.endAccept(NioSocketImpl.java:689)
+	at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:762)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:675)
+	at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:641)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:617)
+	at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:574)
+	at java.base/java.net.ServerSocket.accept(ServerSocket.java:532)
+	at net.falscheridiot.luna.server.modules.Core$1.run(Core.java:42)

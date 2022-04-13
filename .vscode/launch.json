@@ -1,0 +1,53 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ConsoleClient",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.client.ConsoleClient",
+            "args": [
+                "localhost",
+                "8105"
+            ],
+            "projectName": "luna"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestClient",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.client.TestClient",
+            "projectName": "luna"
+        },
+        {
+            "type": "java",
+            "name": "Launch AnotherTestServer",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.server.AnotherTestServer",
+            "projectName": "luna"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.server.App",
+            "projectName": "luna"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestServer",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.server.TestServer",
+            "projectName": "luna"
+        }
+    ]
+}
