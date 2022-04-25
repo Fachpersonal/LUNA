@@ -4,8 +4,10 @@ import java.net.ServerSocket;
 import java.util.HashMap;
 
 import net.falscheridiot.luna.server.modules.ClientHandler;
+import net.falscheridiot.luna.server.modules.CommandHandler;
 import net.falscheridiot.luna.server.modules.Core;
 import net.falscheridiot.luna.server.modules.Logger;
+import net.falscheridiot.luna.server.util.commands.Command;
 
 /**
  * @author @falscherIdiot
@@ -13,16 +15,22 @@ import net.falscheridiot.luna.server.modules.Logger;
  * @since 08-03-2022
  */
 public class R {
-    public static int buildNr = 21; // Github commit counter [13-03-2022]
+    public static int buildNr = 22; // Github commit counter [13-03-2022]
 
     // ? MODULES
     public static Core core = null;
     public static FileHelper fileHelper = null;
     public static Logger logger = null;
+    public static CommandHandler commandHandler = null;
 
     // ? SERVER-CLIENT
+    public static boolean toggledServer = false;
     public static ServerSocket serverSocket = null;
     public static HashMap<String, ClientHandler> users = new HashMap<>();
+    public static Thread serveThread = null;
+    public static Thread serverConsoleThread = null;
+
+    public static HashMap<Integer, Command> commands = null;
 
     public static void broadcast(String message) {
         for (ClientHandler ch : users.values()) {

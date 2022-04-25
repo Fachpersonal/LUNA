@@ -17,7 +17,7 @@ public class ConsoleClient {
     private final String host;
     private final int port;
 
-    private ConsoleClient(String host, int port) {
+    public ConsoleClient(String host, int port) {
         try {
             this.s = new Socket(host, port);
             this.br = new BufferedReader(new InputStreamReader(s.getInputStream()));

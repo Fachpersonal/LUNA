@@ -91,6 +91,7 @@ public class ClientHandler implements ModuleStructure, Runnable {
     public void run() {
         String[] line;
         while (!socket.isClosed() && (line = receive()) != null && line.length != 0) {
+            // System.out.println(line);
             for (String str : line) {
                 str = (str.charAt(0) == '_' ? str.substring(1) : str);
                 if (str.equals("&LUNA-CLIENT-QUIT&")) {

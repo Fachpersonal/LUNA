@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.App",
+            "projectName": "luna"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -37,17 +44,26 @@
         },
         {
             "type": "java",
-            "name": "Launch App",
-            "request": "launch",
-            "mainClass": "net.falscheridiot.luna.server.App",
-            "projectName": "luna"
-        },
-        {
-            "type": "java",
             "name": "Launch TestServer",
             "request": "launch",
             "mainClass": "net.falscheridiot.luna.server.TestServer",
             "projectName": "luna"
+        },
+        {
+            "type": "java",
+            "name": "Launch Luna-Singleplayer",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.App",
+            "projectName": "luna",
+            "args": "-toggleServer=false"
+        },
+        {
+            "type": "java",
+            "name": "Launch Luna-Multiplayer",
+            "request": "launch",
+            "mainClass": "net.falscheridiot.luna.App",
+            "projectName": "luna",
+            "args": "-toggleServer=true"
         }
     ]
 }

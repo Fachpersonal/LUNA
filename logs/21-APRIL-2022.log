@@ -1,0 +1,6 @@
+
+build-22 <15:58:2>  [INFO] :: Core starting... [toggledServer=false]!
+build-22 <15:58:2>  [INFO] :: Core successfully started!
+build-22 <15:58:10>  Server >> test
+build-22 <15:58:13>  [WARNING] :: Core stopping...!
+build-22 <15:58:13>  [WARNING] :: Logger module shutting down!

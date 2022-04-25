@@ -3,47 +3,43 @@ package net.falscheridiot.luna.server.util.commands;
 import net.falscheridiot.luna.server.modules.ClientHandler;
 
 public abstract class Command {
+    protected final int id;
     protected final String cmd;
-    protected final String[] args;
-    protected final String description;
+    protected String[] args;
+    protected String description;
 
-    public Command(String cmd, String[] args, String description) {
-        this.cmd = cmd;
-        this.args = args;
-        this.description = description;
-    }
-
-    public Command(String[] args, String description) {
-        this.cmd = args[0];
-        {
-            String[] tmp = new String[args.length - 1];
-            for (int i = 1; i < args.length; i++) {
-                tmp[i - 1] = args[i];
-            }
-            this.args = tmp;
-        }
-        this.description = description;
-    }
-
-    public Command(String[] args) {
-        this.cmd = args[0];
-        {
-            String[] tmp = new String[args.length - 1];
-            for (int i = 1; i < args.length; i++) {
-                tmp[i - 1] = args[i];
-            }
-            this.args = tmp;
-        }
-        this.description = null;
-    }
-
-    public Command(String cmd) {
+    public Command(String cmd, int id) {
+        this.id = id;
         this.cmd = cmd;
         this.args = null;
         this.description = null;
     }
 
+    public Command setArguments(String[] args) {
+        this.args = args;
+        return this;
+    }
+
+    public Command removeArguments() {
+        this.args = null;
+        return this;
+    }
+
+    public Command setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public Command removeDescription() {
+        this.description = null;
+        return this;
+    }
+
     public abstract void crun(ClientHandler ch);
+
+    public int gId() {
+        return id;
+    }
 
     public String gCmd() {
         return cmd;
