@@ -1,4 +1,4 @@
-package net.falscheridiot.luna.server.modules;
+package net.falscheridiot.luna;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,41 +6,23 @@ import java.io.StringWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import net.falscheridiot.luna.server.util.ModuleStructure;
-import net.falscheridiot.luna.server.util.R;
-
 /**
- * Logger
- * 
  * @author @falscherIdiot
- * @version 1.4
+ * @version 1.
  * @see ModuleStructure
  */
-public class Logger implements ModuleStructure {
+public class Logger {
 
     /** Constructor */
+    public Logger(String logDir) {
+        R.logDir = logDir;
+    }
+
+    /** Default Constructor */
     public Logger() {
-        start();
     }
 
     /**
-     * Start function of Logger
-     */
-    @Override
-    public void start() {
-        R.logger = this;
-    }
-
-    /** Stop function of Logger */
-    @Override
-    public void stop() {
-        WARNING("Logger module shutting down");
-        R.logger = null;
-    }
-
-    /**
-     * Default LOG
-     * 
      * @param msg
      * @throws IOException
      */
@@ -55,8 +37,6 @@ public class Logger implements ModuleStructure {
     }
 
     /**
-     * INFO LOG
-     * 
      * @param msg
      */
     public void INFO(String msg) {
@@ -70,8 +50,6 @@ public class Logger implements ModuleStructure {
     }
 
     /**
-     * WARNING LOG
-     * 
      * @param msg
      * @throws IOException
      */
@@ -86,8 +64,6 @@ public class Logger implements ModuleStructure {
     }
 
     /**
-     * ERROR DEFAULT LOG
-     * 
      * @param msg
      * @throws IOException
      */
@@ -102,8 +78,6 @@ public class Logger implements ModuleStructure {
     }
 
     /**
-     * ERROR EXCEPTION LOG
-     * 
      * @param e
      * @throws IOException
      */

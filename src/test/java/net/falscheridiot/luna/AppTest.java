@@ -23,4 +23,9 @@ public class AppTest {
             System.out.println("/logs Directory exists!");
         }
     }
+
+    @Test
+    public void tempTest() {
+        System.out.println("Peter, ".substring(0, "Peter, ".length() - 2));
+    }
 }

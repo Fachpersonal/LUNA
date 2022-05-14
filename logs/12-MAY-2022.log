@@ -1,0 +1,13 @@
+
+build-22 <20:6:54>  adzx
+build-22 <20:6:54>  [INFO] :: Command does not exists! [adzx]!
+build-22 <20:7:11>  todo::showTodos
+build-22 <20:7:11>  [INFO] :: Command does not exists! [todo::showTodos]!
+build-22 <20:8:6>  core::stop
+build-22 <20:8:6>  [WARNING] :: Stopping LUNA!
+build-22 <20:9:14>  todo::showTodos
+build-22 <20:9:47>  todo::createTodo
+build-22 <20:9:47>  New Todo created! [0]null
+  Priority: 0
+build-22 <20:17:8>  core::stop
+build-22 <20:17:8>  [WARNING] :: Stopping LUNA!

@@ -1,4 +1,4 @@
-package net.falscheridiot.luna.server.util;
+package net.falscheridiot.luna;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
