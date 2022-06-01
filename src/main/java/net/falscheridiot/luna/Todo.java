@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class Todo {
 
-    private static int id = -1;
+    private static int id = 0;
     private static HashMap<Integer, Todo> todos;
     private int todoId;
     private String label;
@@ -21,29 +21,25 @@ public class Todo {
     /** Constructor */
     public Todo() {
         todos = new HashMap<Integer, Todo>();
-        R.events.RegisterTriggerEvent("todo::createTodo", args -> {
+        R.events.RegisterTriggerEvent("todo::createTodo", "Creates TODO", args -> {
             // ? R.logger.LOG("Creating new Todo");
-            String tlabel = "";
-            String tdescription = "";
-            int tpriority = -1;
-            String[] ttags = null;
-            LocalDateTime tcreationDate = null;
+            String tlabel;
+            String tdescription;
+            int tpriority;
+            String[] ttags;
+            LocalDateTime tcreationDate;
             String t = "";
             if (args == null) {
                 tlabel = System.console().readLine("Label: ");
                 tdescription = System.console().readLine("Description: ");
-                try {
-                    tpriority = Integer.parseInt(System.console().readLine("Priority: "));
-                } catch (Exception e) {
-                    tpriority = -1;
-                }
+                tpriority = Integer.parseInt(System.console().readLine("Priority: "));
                 ttags = System.console().readLine("Tags (seperate with \', \'): ").split(", ");
                 tcreationDate = LocalDateTime.now();
-                todos.put(++id, new Todo(tlabel, tdescription, tpriority, ttags, tcreationDate));
+                new Todo(tlabel, tdescription, tpriority, ttags, tcreationDate);
             } else if (args.length == 1) {
                 tlabel = args[0];
                 tcreationDate = LocalDateTime.now();
-                todos.put(++id, new Todo(tlabel, null, -1, null, tcreationDate));
+                todos.put(id++, new Todo(tlabel, null, -1, null, tcreationDate));
             }
             if (tags != null) {
                 for (String string : tags) {
@@ -51,11 +47,11 @@ public class Todo {
                 }
                 t.substring(0, t.length() - 2);
             }
-            R.logger.LOG("New Todo created! [" + id + "] " + tlabel
-                    + (tdescription == null ? "" : "\n  Description: " + tdescription) + "\n"
-                    + (tpriority == -1 ? "" : "  Priority: " + tpriority));
+            R.logger.LOG("New Todo created! [" + todoId + "]" + label
+                    + (description == null ? "" : "  Description: " + description) + "\n"
+                    + (priority == -1 ? "" : "  Priority: " + priority));
         });
-        R.events.RegisterTriggerEvent("todo::showTodos", args -> {
+        R.events.RegisterTriggerEvent("todo::showTodos", "Displays all TODOs", args -> {
             System.out.println("Todos: ");
             System.out.println("---------------------------------");
             System.out.println("ID:\tLabel:\tPriority");
@@ -64,32 +60,17 @@ public class Todo {
                 System.out.println("[" + todo.todoId + "]\t" + todo.label + "\t" + todo.priority);
             }
         });
-        R.events.RegisterTriggerEvent("todo::inspectTodo", todo -> {
+        R.events.RegisterTriggerEvent("todo::inspectTodo", "Allows to inspect specific TODO", todo -> {
             int x;
             if (todo == null) {
                 R.events.TriggerEvent("todo::showTodos", null);
-                try {
-                    x = Integer.parseInt(System.console().readLine("ID: "));
-                } catch (Exception e) {
-                    R.logger.ERROR("Invalid ID!");
-                    return;
-                }
+                x = Integer.parseInt(System.console().readLine("ID: "));
             } else {
-                try {
-                    x = Integer.parseInt(todo[0]);
-                } catch (Exception e) {
-                    R.logger.ERROR("Invalid ID!");
-                    return;
-                }
+                x = Integer.parseInt(todo[0]);
             }
-            try {
-                System.out.println(todos.get(x).toString());
-            } catch (Exception e) {
-                R.logger.ERROR("Todo does not exists!");
-                return;
-            }
+            System.out.println(todos.get(x).toString());
         });
-        R.events.RegisterTriggerEvent("todo::removeTodo", todo -> {
+        R.events.RegisterTriggerEvent("todo::removeTodo", "Removes TODO", todo -> {
             // ? R.logger.LOG("Removing Todo");
             int x;
             if (todo == null) {
@@ -165,16 +146,15 @@ public class Todo {
 
     /** toString */
     public String toString() {
-        String t = "{";
+        String t = "";
         if (tags != null) {
             for (String string : tags) {
                 t += string + ", ";
             }
             t.substring(0, t.length() - 2);
-            t += "}";
         }
         return "[" + todoId + "]" + label + "\n--------------------------------\n"
-                + "  Description: " + description + "\n"
-                + "  Priority: " + priority + "\n" + "  Tags: " + t + "\n  Creation-Date: " + creationDate;
+                + (description == null ? "" : "  Description: " + description) + "\n"
+                + (priority == -1 ? "" : "  Priority: " + priority) + "\n" + t + "\n  Creation-Date: " + creationDate;
     }
 }

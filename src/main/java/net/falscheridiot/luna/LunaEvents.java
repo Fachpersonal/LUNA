@@ -19,11 +19,13 @@ public class LunaEvents {
         public void run(String[] args);
     }
 
+    private HashMap<String, String> eventDesc;
     private HashMap<String, EventFunction> events;
 
     /** Constructor */
     public LunaEvents() {
         events = new HashMap<String, EventFunction>();
+        eventDesc = new HashMap<String, String>();
     }
 
     /**
@@ -32,8 +34,9 @@ public class LunaEvents {
      * @param eventName
      * @param eventFunction
      */
-    public void RegisterTriggerEvent(String eventName, EventFunction eventFunction) {
+    public void RegisterTriggerEvent(String eventName, String description, EventFunction eventFunction) {
         events.put(eventName, eventFunction);
+        eventDesc.put(eventName, description);
     }
 
     /**
@@ -51,4 +54,9 @@ public class LunaEvents {
         return true;
     }
 
+    public void printEvents() {
+        for (String event : eventDesc.keySet()) {
+            System.out.println(event + "\t-    " + eventDesc.get(event));
+        }
+    }
 }
