@@ -54,6 +54,9 @@ public class LunaEvents {
         return true;
     }
 
+    /**
+     * Prints all registered Events
+     */
     public void printEvents() {
         for (String event : eventDesc.keySet()) {
             System.out.println(event + "\t-    " + eventDesc.get(event));

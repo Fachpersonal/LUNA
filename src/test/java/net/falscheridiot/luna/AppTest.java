@@ -26,6 +26,6 @@ public class AppTest {
 
     @Test
     public void tempTest() {
-        System.out.println("Peter, ".substring(0, "Peter, ".length() - 2));
+        System.out.println(R.encryptString("1234"));
     }
 }

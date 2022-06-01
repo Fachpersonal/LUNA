@@ -6,7 +6,7 @@ package net.falscheridiot.luna;
  * @since 08-03-2022
  */
 public class R {
-    public static int buildNr = 23; // Github commit counter [13-03-2022]
+    public static int buildNr = 24; // Github commit counter [13-03-2022]
 
     // ? MODULES
     public static Core core = null;
